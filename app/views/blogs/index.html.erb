@@ -1,0 +1,23 @@
+<<div class = 'SportHeader'>
+<h1>Sports Blog Rants: </h1>
+</div>
+
+
+<% @blogs.each do |b| %><div class = "bposttitle"><a href = "/blogs/<%= b.id %>"><hr>Blog Post:</a><br />
+	
+			Title: <%= b.title %> |
+			Sport: <%= b.category %><br />
+			</div>
+			<div class = "bcontent">Content: <%= b.content %></div>
+			<br />
+	
+			<% b.comments.each_with_index do |c, index| %><br />
+				 <div class ='comment-list' ><%= index + 1 %>. Comment:<br /><br />
+					  <%= c.content %><br />
+		
+				</div>
+			<% end %>
+	
+<% end %>
+
+</div>

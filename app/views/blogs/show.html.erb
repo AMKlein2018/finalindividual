@@ -1,0 +1,73 @@
+<div class = "sblogheader">
+	<h1>Blog Profile:</h1>
+	<div class = "showlinks">
+	<% if current_user && current_user.id === @blog.user_id %>
+			<%= link_to "Create Blog" , new_blog_path %> |
+			<%= link_to "Edit Blog" , edit_blog_path %> |
+			<%= link_to "Delete Blog", blog_path, method: :delete %> |
+		</div><br />
+		<% end %>
+	</div>
+	<hr>
+
+	Topic: <%= @blog.title %> |
+	Sport: <%= @blog.sport %>
+	<div class = "scontent"><br />Content: <br />
+		<%= @blog.content %>
+	
+		<hr>
+		<% @blog.comments do |c| %>
+			<%= c.content %>
+		<% end %>
+		
+		<br /> <%= render 'comments/form' %><br />
+	</div>
+	
+</div>
+	
+
+
+
+<!-- update comments -->
+		
+		<% if current_user && current_user.id === @blog.user_id %>
+			<% @blog.comments.each_with_index do |comment, index| %>
+
+			  	<div class = "addcomments"><%= index + 1 %>. <%= comment.content %><br /><br />
+
+				  <!-- <div class = "commentlinks"> -->
+				  
+					  	<%= link_to "Edit", edit_blog_comment_path(:blog_id => @blog.id, :id => comment.id) %> •
+					  	<%= link_to "Delete", blog_comment_path(:blog_id => @blog.id, :id => comment.id), :method => :delete %>
+				 	
+				</div><br />
+				 
+
+			<% end %>
+		<% end %>
+
+
+<!-- end update comments  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

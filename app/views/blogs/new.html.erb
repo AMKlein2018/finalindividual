@@ -1,0 +1,16 @@
+<div class = "createblogheader"><h3>Create Sports Blog:</h3></div>
+
+
+
+<%= form_for @blog do |f| %>
+	Title: <%= f.text_field :title %><br />
+	Sport Type: <%= f.text_field :category %><br />
+	<hr>
+	<div class = "blogcontent">Blog Content:</div><br />
+	<div class = "createcontent"><%= f.text_area :content, :cols => 70, :rows => 13%>
+	</div>
+	<br />
+	
+	<div class = "contentsubmit"><%= f.submit "Create Sports Blog" %></div>
+<% end %>
+
