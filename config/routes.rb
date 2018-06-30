@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  get 'comments/index'
-  get 'comments/new'
-  get 'comments/show'
-  get 'comments/edit'
-  get 'blogs/index'
-  get 'blogs/new'
-  get 'blogs/show'
-  get 'blogs/edit'
+
+  get "/profile/:id" => "profile#show"
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'blogs#index'
+  # resources :blogs
+
+  resources :blogs do
+    resources :comments
+  end
+  
 end

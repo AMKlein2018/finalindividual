@@ -1,0 +1,14 @@
+<div class = "profileheader">
+	<h1>User Profile Page:</h1>
+</div>
+		
+
+	<div class = "userblogs">
+		<% @user.blogs.each do |b| %><br />
+			<div>Title: <%= b.title %><br /> Sport: <%= b.category %><br />
+			</div>
+			Blog Post: <%= b.content %><br />
+			<hr>
+		<% end %>
+	</div>
+		

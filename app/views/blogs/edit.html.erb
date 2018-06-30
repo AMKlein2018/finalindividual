@@ -1,2 +1,16 @@
-<h1>Blogs#edit</h1>
-<p>Find me in app/views/blogs/edit.html.erb</p>
+<div class = "updateblogheader"><h2>Update Sports Blog:</h2></div>
+
+<%= form_for @blog do |u| %>
+	Title: <%= u.text_field :title %><br />
+	Sport: <%= u.text_field :category %><br />
+	<hr>
+	<div class = "upcontentheader">Blog Update:</div><br />
+	 <div class = "updatecontent"><%= u.text_area :content, :cols => 70, :rows => 13 %></div>
+	 <br />
+	
+<div class = "updatesubmit"><%= u.submit "Update" %></div>
+
+
+
+
+<% end %>
