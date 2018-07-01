@@ -1,14 +1,31 @@
 <div class = "profileheader">
 	<h1>User Profile Page:</h1>
 </div>
-		
 
-	<div class = "userblogs">
-		<% @user.blogs.each do |b| %><br />
-			<div>Title: <%= b.title %><br /> Sport: <%= b.category %><br />
-			</div>
-			Blog Post: <%= b.content %><br />
-			<hr>
+
+<div class = "userblogs">
+	<div class="userauthored">
+		<h2>Authored Posts:</h2>
+		<% @user.blogs.count do |b| %><br />
 		<% end %>
 	</div>
-		
+
+	<div class="userfavorited">
+		<h2>Favorite Categories:</h2>
+		<% @user.categories.each do |c| %>
+			<%= c.title %>
+		<% end %>
+
+		<h2>Posts in Favorite Categories:</h2>
+		<% @user.categories.each do |c| %>
+			<% c.blogs.each do |b| %>
+				<div>Title: <%= b.title %><br /> Sport: <%= b.category.title %><br />
+				</div>
+				Blog Post: <%= b.content %><br />
+				<hr>
+			<% end %>
+		<% end %>
+	</div>
+</div>
+
+

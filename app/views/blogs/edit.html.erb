@@ -2,7 +2,7 @@
 
 <%= form_for @blog do |u| %>
 	Title: <%= u.text_field :title %><br />
-	Sport: <%= u.text_field :category %><br />
+	Sport: <%= u.text_field :category_id %><br />
 	<hr>
 	<div class = "upcontentheader">Blog Update:</div><br />
 	 <div class = "updatecontent"><%= u.text_area :content, :cols => 70, :rows => 13 %></div>
