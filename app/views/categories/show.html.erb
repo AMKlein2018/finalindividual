@@ -1,2 +1,12 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<h1><%= @category.title %></h1>
+
+
+
+
+<% @category.blogs.each do |b|%>
+    <%= b.title %><br />
+    <%= b.content %>
+   	<% b.comments.each do |b| %>
+			<%= b.content %>
+		<% end %>
+<% end %>

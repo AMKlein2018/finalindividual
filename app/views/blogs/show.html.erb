@@ -11,7 +11,7 @@
 	<hr>
 
 	Topic: <%= @blog.title %> |
-	Sport: <%= @blog.category %>
+	Sport: <%= @blog.category.title %>
 	<div class = "scontent"><br />Content: <br />
 		<%= @blog.content %>
 	
@@ -25,9 +25,6 @@
 	
 </div>
 	
-
-
-
 <!-- update comments -->
 		
 		<% if current_user && current_user.id === @blog.user_id %>
@@ -38,14 +35,10 @@
 				  <!-- <div class = "commentlinks"> -->
 				  
 					  	<%= link_to "Edit", edit_blog_comment_path(:blog_id => @blog.id, :id => comment.id) %> •
-					  	<%= link_to "Delete", blog_comment_path(:blog_id => @blog.id, :id => comment.id), :method => :delete %>
-				 	
+					  	<%= link_to "Delete", blog_comment_path(:blog_id => @blog.id, :id => comment.id), :method => :delete %>		 	
 				</div><br />
-				 
-
 			<% end %>
 		<% end %>
-
 
 <!-- end update comments  -->
 

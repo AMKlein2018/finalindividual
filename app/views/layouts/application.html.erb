@@ -28,8 +28,54 @@
           <a href='/profile/<%=current_user.id %>'<%= current_user.id %>'><%= current_user.email %></a>
           <% end %>
     </nav>
+    <hr>
+    <div class = "sportnav">
+      <nav>
+          <% if signed_in? %>
+              <ul>
+                <% Category.all.each do |c|  %>
+                  <li><%= link_to c.title, category_path(c) %></li>
+                <% end %>
+              </ul>
+          <% end %>
+      </nav>
+    </div>
+
+
 
 
     <%= yield %>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
