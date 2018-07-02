@@ -19,6 +19,12 @@
 		<% @blog.comments do |c| %>
 			<%= c.content %>
 		<% end %>
+
+		<p>
+	 		<strong>Image:</strong>
+	  		<img src="<%= @blog.image.url()%>">
+		</p>
+
 		
 		<br /> <%= render 'comments/form' %><br />
 	</div>

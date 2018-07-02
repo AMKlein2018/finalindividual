@@ -8,6 +8,15 @@
 	
 	<hr>
 	<div class = "blogcontent">Blog Content:</div><br />
+
+	
+	<div class="field">
+	    <%= f.label :Uploaded_Images %><br>
+	    <%= f.file_field :image %>
+  	</div><br>
+
+
+
 	<div class = "createcontent"><%= f.text_area :content, :cols => 70, :rows => 13%>
 	</div>
 	<br />

@@ -7,8 +7,20 @@
 	<div class = "upcontentheader">Blog Update:</div><br />
 	 <div class = "updatecontent"><%= u.text_area :content, :cols => 70, :rows => 13 %></div>
 	 <br />
-	
-<div class = "updatesubmit"><%= u.submit "Update" %></div>
+	<div class="field">
+	    <%= u.label :Uploaded_Images %><br>
+	    <%= u.file_field :image %>
+	    <% if u.object.image? %>
+     		 <%= image_tag u.object.image.thumb.url %>
+     		 <%= u.label :remove_image %>
+      		 <%= u.check_box :remove_image %> 
+      	<% end %>	
+  	</div><br>
+		
+	<div class = "updatesubmit">
+		<%= u.submit "Update" %>
+	</div>
+
 
 
 

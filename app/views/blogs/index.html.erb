@@ -8,6 +8,11 @@
 			</div>
 			<div class = "bcontent">Content: <%= b.content %></div>
 			<br />
+			<p>
+		 		<strong>Image:</strong>
+		  		<img src="<%= b.image.url()%>">
+			</p>
+
 			<% b.comments.each_with_index do |c, index| %>		<br />
 				 <div class ='comment-list' ><%= index + 1 %>. Comment:<br /><br />
 					  <%= c.content %><br />
@@ -15,6 +20,8 @@
 			<% end %>
 	<% end %>
 </div>
+
+		
 
 	<div class="favorites">
 		<strong>Select Favorites:</strong><br />

@@ -1,4 +1,6 @@
 class BlogsController < ApplicationController
+
+
   def index
   	@blogs = Blog.all
   end
@@ -26,7 +28,6 @@ class BlogsController < ApplicationController
 
   def edit
     @blog = Blog.find(params[:id])
-    
   end
 
     def update
@@ -48,7 +49,7 @@ class BlogsController < ApplicationController
 
 	private
 def blog_params
-	params.require(:blog).permit(:title, :content, :category_id, :user_id)
+	params.require(:blog).permit(:title, :content, :category_id, :user_id, :image)
 end
 
 end

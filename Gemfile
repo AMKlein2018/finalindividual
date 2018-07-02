@@ -30,7 +30,8 @@ gem 'devise'
 gem 'devise-bootstrap-views'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
+gem 'carrierwave', '~> 1.0'
+gem "mini_magick"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 # gem 'bootstrap', '~> 4.0'
