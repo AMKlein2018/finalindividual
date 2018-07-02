@@ -4,7 +4,8 @@
 
 <%= form_for @blog do |f| %>
 	Title: <%= f.text_field :title %><br />
-	Sport Type: <%= f.text_field :category_id %><br />
+	<%= f.collection_radio_buttons :category_id, Category.all, :id, :title %>
+	
 	<hr>
 	<div class = "blogcontent">Blog Content:</div><br />
 	<div class = "createcontent"><%= f.text_area :content, :cols => 70, :rows => 13%>
@@ -14,3 +15,4 @@
 	<div class = "contentsubmit"><%= f.submit "Create Sports Blog" %></div>
 <% end %>
 
+ 
