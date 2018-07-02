@@ -7,6 +7,10 @@
     <%= b.title %><br />
     <%= b.content %>
    	<% b.comments.each do |b| %>
-			<%= b.content %>
-		<% end %>
+		<%= b.content %>
+	<% end %>
+	<p>
+		<strong>Image:</strong>
+		<img src="<%= b.image.url()%>">
+	</p>
 <% end %>
