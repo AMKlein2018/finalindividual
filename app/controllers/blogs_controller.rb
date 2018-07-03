@@ -1,8 +1,10 @@
 class BlogsController < ApplicationController
-
-
+  before_action :index, :show, only:[:upvote, :downvote]
+  before_action :authenticate_user!
   def index
-  	@blogs = Blog.all
+  	@blogs = Blog.all.order(:cached_votes_score => :desc)
+    @messages = Message.all
+
   end
 
   def new
@@ -45,6 +47,16 @@ class BlogsController < ApplicationController
     redirect_to "/blogs"
   end
 
+  def upvote
+    @blog.upvote_from current_user
+    redirect_to blogs_path
+
+  end
+
+  def downvote
+    @blog.downvote_from current_user
+    redirect_to blogs_path
+  end
 
 
 	private
