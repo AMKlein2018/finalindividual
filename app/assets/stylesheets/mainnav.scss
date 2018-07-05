@@ -1,0 +1,85 @@
+@import "variables";
+
+.mainnav {
+	background-color: $black;
+	text-decoration: none;
+	font-family: $mainnav-font;
+	text-transform: uppercase;
+	display: inline-block;
+	margin: 0px 0px;
+	font-size: 20px;
+	text-align: center;
+	width: 100%;
+	padding-right: 50px;
+	border: 2px solid black;
+	height: 30px;
+	padding-top: 1.5px;
+	height: 50px;
+
+}
+
+.mainnav a {
+
+	color: $white;
+}
+
+header h1 {
+	display: inline;
+	color: $dkblue;
+	font-family: $mainnav-font;
+	text-transform: uppercase;
+	font-size:60px;
+	margin:0;
+	padding:0;
+	line-height:110%;
+	letter-spacing: 1px;
+}
+
+.sportnav {
+
+	color: $white;
+	text-decoration: none;
+	font-family:  $sportlinknav-font;
+	display: inline-block;
+	font-size: 16px;
+	// border: 2px solid white;
+	width: 100%;
+	text-align: center;
+	letter-spacing: 1px;
+	background-color: $dkblue;
+
+
+}
+
+.sportnav a {
+
+	color: $white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
