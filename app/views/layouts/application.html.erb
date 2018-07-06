@@ -25,22 +25,28 @@
       <h1>MadJul Sports</h1>
     </header>
 
-
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <!-- <div class="container-fluid"> -->
     <nav class= "mainnav" >
-        
-        <% if !signed_in? %>
+         <a class="navbar-brand" href="#">MadJul Sports</a>
+        <ul class="nav navbar-nav navbar-right">
+          <% if !signed_in? %>
 
-          <a href='/users/sign_up'>Sign up</a> •
-          <a href='/users/sign_in'>Log In</a> 
-        <% end %>
+            <li><a href='/users/sign_up'>Sign up</a></li> •
+            <li><a href='/users/sign_in'>Log In</a></li>
+          <% end %>
+        </ul>  
+        <ul class="nav navbar-nav">
+          <% if signed_in? %>
+            <li><a href='/'>Home</a></li> •
+            <li><%= link_to "New Post", new_blog_path %></li> •
+            <li><%= link_to "Edit Account",  edit_user_registration_path %></li> •
+            <li><%= link_to "Sign out",destroy_user_session_path, method: :delete %></li> •
+        </ul>  
 
-        <% if signed_in? %>
-          <a href='/'>Home</a> •
-          <%= link_to "New Post", new_blog_path %> •
-          <%= link_to "Edit Account",  edit_user_registration_path %> •
-          <%= link_to "Sign out",destroy_user_session_path, method: :delete %> •
-        
-          <a href='/profile/<%=current_user.id %>'<%= current_user.id %>'><%= current_user.email %></a>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href='/profile/<%=current_user.id %>'<%= current_user.id %>'><%= current_user.email %></a></li>
+        </ul>
         <% end %>
     </nav>
       
@@ -51,6 +57,8 @@
                       <% end %>
             <% end %>
     </nav>
+  <!-- </div> -->
+</nav>
   
   <hr>
     
@@ -62,6 +70,8 @@
  
     <div class="footer">
       <footer class="container-fluid text-center">
+        
+
       </footer>
     </div>
       

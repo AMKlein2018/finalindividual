@@ -6,95 +6,93 @@
 
 
 
-	<!-- Current Individual Categories A User 'Can Save' (Start)  -->
-<div class = "favoritescontainer">
+	
+
 	<div class="container-fluid">
 		<div class="row content">
-		    <div class="col-sm-3 sidenav">
-				<% if user_signed_in?%>
-					<!-- <div style="border:3px solid green;width: 300px; padding: 5px"> -->
-						<strong>Select Favorites:</strong>
-							<%= form_for current_user, html: { method: :patch } do |f| %><br />	
-							
-								<%= collection_check_boxes(:user, :category_ids, Category.all, :id, :title) %>		
-							
-								<%= f.submit 'Save' %>
-							<% end %>
-					</div>
-				<% end %>
+			<!-- Current Individual Categories A User 'Can Save' (Start)  -->
+		    <div class="col-md-2 sidenav">
+		    	<div class = "favoritescontainer">
+					<% if user_signed_in?%>
+							<strong>Select Favorites:</strong>
+								<%= form_for current_user, html: { method: :patch } do |f| %><br />	
+								
+									<%= collection_check_boxes(:user, :category_ids, Category.all, :id, :title) %>		
+								
+									<%= f.submit 'Save' %>
+								<% end %>
+					<% end %>
+				</div>
 			</div>
-		</div>
-	</div>
-</div>
-		<!-- Current Individual Categories A User 'Can Save' (End)  -->
+			<!-- Current Individual Categories A User 'Can Save' (End)  -->
 
-		<!-- All Posted Listed (Start) -->
-<div class = "bodycontainer">
-	<div class="container-fluid">
-		<div class="row content">
-			<div class="col-sm-9">
-				<% @blogs.each do |b| %>
-					<a href = "/blogs/<%= b.id %>"><hr>Article Post:</a><br />
-						Title: <%= b.title %> |
-						Sport: <%= b.category.title if b.category %><br />
+			<!-- All Posted Listed (Start) -->
+			<div class="col-md-6">
+				<div class = "postcontainer">
+					<% @blogs.each do |b| %>
+						<a href = "/blogs/<%= b.id %>"><hr>Article Post:</a><br />
+							Title: <%= b.title %> |
+							Sport: <%= b.category.title if b.category %><br />
 
-					<!-- Likes and Dislikes Functionality (Start) -->
-						<div class ="caption" style= "text-align:left;">
-							<%=link_to like_blog_path(b), class: "like", method: :put do %>
-								<button type= "button" class="btn btn-info" aria-label="Left_Align">
-									<span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
-									<span class="badge"><%= b.get_upvotes.size %></span>
-								</button>
-							<% end %>
-							<%=link_to like_blog_path(b), class: "like", method: :put do %>
-								<button type= "button" class="btn btn-info" aria-label="Left_Align">
-									<span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
-									<span class="badge"><%= b.get_downvotes.size %></span>
-								</button>
-							<% end %>
-						</div>
-					<!-- Likes and Dislikes Functionality (End) -->
-						
-					  		<img src="<%= b.image.url()%>"/>
-						
-
-		
-						<div class = "textboxes">Content:<br /> <%= b.content %></div><br />
-						
-						<% b.comments.each_with_index do |c, index| %><br />
-							 <div class ='comment-list' ><%= index + 1 %>. Comment:<br /><br />
-								  <%= c.content %><br />
+						<!-- Likes and Dislikes Functionality (Start) -->
+							<div class ="caption" style= "text-align:left;">
+								<%=link_to like_blog_path(b), class: "like", method: :put do %>
+									<button type= "button" class="btn btn-info" aria-label="Left_Align">
+										<span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+										<span class="badge"><%= b.get_upvotes.size %></span>
+									</button>
+								<% end %>
+								<%=link_to like_blog_path(b), class: "like", method: :put do %>
+									<button type= "button" class="btn btn-info" aria-label="Left_Align">
+										<span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+										<span class="badge"><%= b.get_downvotes.size %></span>
+									</button>
+								<% end %>
 							</div>
-						<% end %>
-				<% end %>
+						<!-- Likes and Dislikes Functionality (End) -->
+							
+						  		<img src="<%= b.image.url()%>"/>
+							
+
+			
+							<div class = "textboxes">Content:<br /> <%= b.content %></div><br />
+							
+
+							<% b.comments.each_with_index do |c, index| %><br />
+								 <div class ='comment-list' ><%= index + 1 %>. Comment:<br /><br />
+									  <%= c.content %><br />
+								</div>
+							<% end %>
+					<% end %>
+				</div>
  			</div>
+ 			<!-- All Posted Listed (End) -->
+
+ 			<!-- Chat Feature (Start) -->
+ 			<div class="col-sm-3 sidenav">	
+	    			
+
+	    			<div class="input-box">
+	    				<div id="messages">
+							<%=render @messages %>
+						</div>
+		      		    <div class="input-box">
+    						<input type="text" class="input-box_text" id="message_input"/>
+  						</div>
+		 			</div>
+			</div>
+			
+			<!-- Chat Feature (End) -->
+
 		</div>
 	</div>
-</div>
 
-
-
-
-	<!-- All Posted Listed (End) -->
-
-
-	<!-- Chat Feature (Start) -->
- <div class="form-group">
- 	<label for="chatbar">Chat:</label>
-          <input type="text" class="form-control" id="input-box_text" placeholder="Chat">
- </div>
 		
-	<div id="messages">
-		<%=render @messages %>
-	</div>
-	
+
+		
 
 	
 	
-	
-
-
-	<!-- Chat Feature (End) -->
 
 
 

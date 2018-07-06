@@ -10,7 +10,7 @@
 	font-size: 20px;
 	text-align: center;
 	width: 100%;
-	padding-right: 50px;
+	padding-right: 200px;
 	border: 2px solid black;
 	height: 30px;
 	padding-top: 1.5px;
@@ -23,23 +23,26 @@
 	color: $white;
 }
 
-header h1 {
+.navbar-brand {
 	display: inline;
 	color: $dkblue;
 	font-family: $mainnav-font;
 	text-transform: uppercase;
-	font-size:60px;
+	font-size:40px;
 	margin:0;
 	padding:0;
 	line-height:110%;
 	letter-spacing: 1px;
+	// border: 4px solid #f7faff;
+	
+	background: linear-gradient(to right, $hanblue , $dkblue);
 }
 
 .sportheader {
 
 	text-align: center;
 	font-size: 24px;
-	border: 2px solid red;
+	// border: 2px solid red;
 
 
 }
@@ -56,6 +59,7 @@ header h1 {
 	text-align: center;
 	letter-spacing: 1px;
 	background-color: $dkblue;
+	background: linear-gradient(to right, $lightgrey, $dkblue);
 
 
 }
