@@ -1,3 +1,10 @@
+
 <div class="message">
-	<%= message.content %>
+  <span class="message_timestamp">
+    <%= message.created_at %>
+  </span>
+  <span class="message_star"></span><br /><br />
+  <span class="message_content">
+    <%= message.content %>
+  </span>
 </div>

@@ -1,5 +1,7 @@
-<%= form_for [@blog, @comment] do |f| %>
-  <div class = "commentheader"><%= f.label :comment %>: <br>
-  <div class = "updatecomment"><%= f.text_area :content, :cols => 83, :rows => 3 %><br>
-  <div class = "commentsubmit"><%= f.submit %></div>
-<% end %>
+
+
+	<%= form_for [@blog, @comment] do |f| %>
+	  <div class = "commentheader"><%= f.label :comment %>: <br>
+	  <div class = "updatecomment"><%= f.text_area :content, :cols => 83, :rows => 3 %><br>
+	  <div class = "commentsubmit"><%= f.submit %></div>
+	<% end %>

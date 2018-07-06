@@ -1,8 +1,12 @@
 <div class = "updateblogheader"><h2>Update Sports Blog:</h2></div>
 
+<!-- Update Article Post (Start) -->
 <%= form_for @blog do |u| %>
 	Title: <%= u.text_field :title %><br />
 	Sport: <%= @blog.category.title %><br />
+	<div class = "updatesubmit">
+		<%= u.submit "Update" %>
+	</div>
 	<hr>
 	<div class = "upcontentheader">Blog Update:</div><br />
 	 <div class = "updatecontent"><%= u.text_area :content, :cols => 70, :rows => 13 %></div>
@@ -17,9 +21,31 @@
       	<% end %>	
   	</div><br>
 		
-	<div class = "updatesubmit">
-		<%= u.submit "Update" %>
-	</div>
-
 
 <% end %>
+<!-- Update Article Post (End) -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

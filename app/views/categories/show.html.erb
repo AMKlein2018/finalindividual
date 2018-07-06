@@ -1,16 +1,26 @@
-<h1><%= @category.title %></h1>
+
+
+<!-- Individual Category Sport Page (Start) -->
+<div class = "sportheader"><h1><%= @category.title %></h1></div>
 
 
 
 
-<% @category.blogs.each do |b|%>
-    <%= b.title %><br />
-    <%= b.content %>
-   	<% b.comments.each do |b| %>
-		<%= b.content %>
-	<% end %>
-	<p>
-		<strong>Image:</strong>
-		<img src="<%= b.image.url()%>">
-	</p>
-<% end %>
+
+	<div class="sportarticles">
+				<% @category.blogs.each_with_index do |b, index|%>
+					<div class ='article-list' ><%= index + 1 %>. 
+					    Title: <%= b.title %><br />
+					<div class="sportcontent">Content: <br /><%= b.content %><br /></div>
+					   	<% b.comments.each_with_index do |b, index| %>
+					   	<%= index + 1 %>. 
+							<%= b.content %>
+						<% end %>
+						<img src="<%= b.image.url()%>"/>
+					</div>
+					
+						
+				<% end %>
+	</div>
+
+<!-- Individual Category Sport Page (End) -->

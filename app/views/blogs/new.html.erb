@@ -1,7 +1,7 @@
-<div class = "createblogheader"><h3>Create Sports Blog:</h3></div>
+<div class = 'sportheader'><h3>Create Sports Blog:</h3></div>
 
 
-
+<!-- Create A New Post (Start) -->
 <%= form_for @blog do |f| %>
 	Title: <%= f.text_field :title %><br />
 	<%= f.collection_radio_buttons :category_id, Category.all, :id, :title %>
@@ -23,5 +23,5 @@
 	
 	<div class = "contentsubmit"><%= f.submit "Create Sports Blog" %></div>
 <% end %>
-
+<!-- Create A New Post (End) -->
  
