@@ -1,49 +1,56 @@
-<div class = "sportheader">
+<div class = "userheader">
 	<h1>User Profile Page:</h1>
 </div>
 
-
+<div class="container-fluid">
+	<div class="row content">
 	<!-- Current Users Saved Categories (Start) -->
-	<div class="favoritescontainer">
-		<h2>Favorite Categories:</h2>
-		<% if current_user == @user %>
-		<%= form_for current_user, html: { method: :patch } do |f| %>
-			<%= collection_check_boxes(:user, :category_ids, Category.all, :id, :title) %>
-			<%= f.submit 'Save' %> 
-			<% end %>
-		<% end %>
-	</div>
+	  	<div class="col-md-2 sidenav">
+			<div class="favoritescontainer">
+				<h2>Favorite Categories:</h2>
+				<% if current_user == @user %>
+					<%= form_for current_user, html: { method: :patch } do |f| %>
+						<%= collection_check_boxes(:user, :category_ids, Category.all, :id, :title) %>
+						<%= f.submit 'Save' %> 
+					<% end %>
+				<% end %>
+			</div>
+		</div>
 	<!-- Current Users Saved Categories (End) -->
 
 
 	<!-- Current Articles Posted According to Categories Saved (Start)-->
-	<div class ="bodycontainer">
-		<h2>Posts in Favorite Categories:</h2>
-		<% @user.categories.each do |c| %>
-			<% c.blogs.each do |b| %>
-				<div>Title: <%= b.title %><br /> Sport: <%= b.category.title %><br />
-				</div>
-				Article Post: <%= b.content %><br />
-				
-	  				<img src="<%= b.image.url()%>">
-	  		<hr>
-			<% end %>
-		<% end %>
-
-	</div>
+		<div class="col-md-6">
+			<div class ="postcontainer">
+				<h2>Posts in Favorite Categories:</h2>
+				<% @user.categories.each do |c| %>
+					<% c.blogs.each do |b| %>
+						<div>Title: <%= b.title %><br /> Sport: <%= b.category.title %><br />
+						</div>
+						Article Post: <%= b.content %><br />
+						
+			  				<img src="<%= b.image.url()%>">
+			  		<hr>
+					<% end %>
+				<% end %>
+			</div>
+		</div>
 	<!-- Current Articles Posted According to Categories Saved (End)-->
 
 
 
 	<!-- Current Users Authored Posts (Start) -->
-	<div class = "userblogs">
-		<div class="userauthored">
-			<h2>Authored Posts:</h2>
-			<% @user.blogs.count do |b| %><br />
-			<% end %>
+		<div class="col-sm-3 sidenav">		
+			<div class = "userblogs">
+				<div class="userauthored">
+					<h2>Authored Posts:</h2>
+					<% @user.blogs.count do |b| %><br />
+					<% end %>
+				</div>
+			</div>
 		</div>
-	</div>
 	<!-- Current Users Authored Posts (End) -->
-
+	</div>
+</div>
 
 

@@ -14,7 +14,7 @@
 		    <div class="col-md-2 sidenav">
 		    	<div class = "favoritescontainer">
 					<% if user_signed_in?%>
-							<strong>Select Favorites:</strong>
+							<strong>Favorites:</strong>
 								<%= form_for current_user, html: { method: :patch } do |f| %><br />	
 								
 									<%= collection_check_boxes(:user, :category_ids, Category.all, :id, :title) %>		
@@ -52,12 +52,9 @@
 						<!-- Likes and Dislikes Functionality (End) -->
 							
 						  		<img src="<%= b.image.url()%>"/>
-							
-
 			
 							<div class = "textboxes">Content:<br /> <%= b.content %></div><br />
 							
-
 							<% b.comments.each_with_index do |c, index| %><br />
 								 <div class ='comment-list' ><%= index + 1 %>. Comment:<br /><br />
 									  <%= c.content %><br />
@@ -71,7 +68,7 @@
  			<!-- Chat Feature (Start) -->
  			<div class="col-sm-3 sidenav">	
 	    			
-
+ 					<h2>What's On Your Mind?</h2>
 	    			<div class="input-box">
 	    				<div id="messages">
 							<%=render @messages %>
