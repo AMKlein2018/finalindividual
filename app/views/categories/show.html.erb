@@ -10,8 +10,8 @@
 		    <div class="col-md-2 sidenav">
 		    	<div class = "favoritescontainer">
 					<% if user_signed_in?%>
-							<strong>Favorites:</strong>
-								<%= form_for current_user, html: { method: :patch } do |f| %><br />	
+							<strong><h3>Favorites:</h3></strong>
+								<%= form_for current_user, html: { method: :patch } do |f| %>
 								
 									<%= collection_check_boxes(:user, :category_ids, Category.all, :id, :title) %>		
 								

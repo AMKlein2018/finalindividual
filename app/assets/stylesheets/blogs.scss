@@ -29,7 +29,7 @@
 	width: 100%;
 	// bottom: 380px;
 	height: 600px;
-	margin-left: 200px;
+	margin-left: 150px;
 	// margin-bottom: 300px;
 	overflow-y: scroll;
 	border-radius: 25px;
@@ -55,11 +55,12 @@ div.createcontent {
 	// background: linear-gradient(to right, $lightgrey, $dkblue);
 	height: 50px;
 	padding-top: 5px;
+
 }
 
 .createtitle {
 
-	text-align: center;
+	// text-align: center;
 }
 
 .titlecontent {
@@ -67,17 +68,40 @@ div.createcontent {
 	text-align: center;
 }
 
-#blog_category_id_1, #blog_category_id_2, #blog_category_id_3, #blog_category_id_4 {
+#blog_category_id_1, 
+#blog_category_id_2, 
+#blog_category_id_3, 
+#blog_category_id_4, 
+#blog_category_id_5, 
+#blog_category_id_6, 
+#blog_category_id_7, 
+#blog_category_id_8,  {
 	margin-right: 8px;
 	margin-left: 10px;
 
 }
 
-label[for="blog_category_id_1"], [for="blog_category_id_2"], [for="blog_category_id_3"] {
+label
+[for="blog_category_id"],
+[for="blog_category_id_1"], 
+[for="blog_category_id_2"], 
+[for="blog_category_id_3"], 
+[for="blog_category_id_4"], 
+[for="blog_category_id_5"], 
+[for="blog_category_id_6"], 
+[for="blog_category_id_7"],
+[for="blog_category_id_8"] {
 	// margin-left: 3px;
 	padding-right: 10px;
+	color: #f7faff;
+	text-shadow: 2px 2px #4C71D4;
 }
 
+label
+[for="blog_category_id_8"] {
+	
+	color: #f7faff;
+}
 
 
 
