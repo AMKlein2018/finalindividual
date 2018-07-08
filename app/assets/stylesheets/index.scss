@@ -1,11 +1,7 @@
 @import "variables";
 
-// .favorites {
 
-// 	text-align: center;
-// 	font-size: 30px;
-
-// }
+// Favorites Category Start
 
 .favoritescontainer {
 // 
@@ -20,97 +16,9 @@
 	margin-left: 100px;
 	padding-left: 5px;
 
-}
-
-.postcontainer {
-
-	border: 4px solid #17256b;
-	// position: relative;
-	width: 100%;
-	// bottom: 380px;
-	height: 500px;
-	margin-left: 20px;
-	// margin-bottom: 300px;
-	overflow-y: scroll;
-	border-radius: 25px;
-	font-size: 20px;
-	padding-left: 20px;
 
 }
 
-#messages {
-
-	border: 2px solid #4C71D4;
-	height: 500px;
-	width: 100%;
-	// position: relative;
-	// bottom: 100px;
-	// margin-left: 150px;
-	padding-left: 10px;
-	overflow-y: scroll;
-	// margin-bottom: 300px;
-	background-color: $white;
-	border-radius: 5px;
-
-
-
-}
-
-.message {
-
-	// background-color: $white;
-	font-size: 16px;
-		// border: 2px solid green;
-}
-
-
-
-
-button {
-
-	height: 30px;
-
-}
-
-
-.messages, .input-box {
-  height: 100%;
-  
-}
-
-.input-box_text {
-  font-size: 16px;
-  width: 100%;
-  // margin-right: 50px;
-  margin-bottom: auto;
-  line-height: 1.2rem;
-  border: 2px solid #4C71D4;
-  border-radius: 0.2rem;
-  background-clip: padding-box;
-  color: #3d3c40;
-  box-shadow: none;
-  outline: 0;
-  bottom: 0;
-  min-height: 41px !important;
-  padding: 9px 5px 9px 8px;
-  background-color: lightblue;
-  // margin-left: 150px;
-
-}
-
-
-
-#user_category_ids_1, 
-#user_category_ids_2, 
-#user_category_ids_3, 
-#user_category_ids_4, 
-#user_category_ids_5, 
-#user_category_ids_6, 
-#user_category_ids_7, 
-#user_category_ids_8 {
-	// margin-right: 20px;
-
-}
 
 label[for="user_category_ids_1"],
 	 [for="user_category_ids_2"],
@@ -125,33 +33,148 @@ label[for="user_category_ids_1"],
 	// display: block;
 }
 
+#user_category_ids_1, 
+#user_category_ids_2, 
+#user_category_ids_3, 
+#user_category_ids_4, 
+#user_category_ids_5, 
+#user_category_ids_6, 
+#user_category_ids_7, 
+#user_category_ids_8 {
+	// margin-right: 20px;
 
+}
+
+
+button {
+
+	height: 30px;
+
+}
+
+// Favorites Category Ends
+
+
+// Main Sports Feed Page
+.postcontainer {
+
+	border: 4px solid #17256b;
+	// position: relative;
+	width: 100%;
+	// bottom: 380px;
+	height: 600px;
+	margin-left: 50px;
+	padding-right: 10px;
+	// margin-bottom: 300px;
+	overflow-y: scroll;
+	border-radius: 25px;
+	font-size: 20px;
+	padding-left: 20px;
+	background: linear-gradient(to right, $white, $lightgrey);
+
+}
 
 .textboxes {
 
-	border: 2px solid #4C71D4;
+	border: 1px solid #4C71D4;
 	height: 300px;
-	width: 50%;
-	// position: relative;
-	// bottom: 148px; 
+	width: 90%;
+	margin-left: 10px;
+	position: relative;
+	bottom: 450px; 
+	background-color: $white;
+	opacity: 0.7;
+	overflow-y: scroll;
+	border-radius: 10px;
+	color: $black;
 
 }
 
 img {
-	margin-left: 400px;
-	width: 230px;
+	// margin-right: 100px;
+	width: 100%;
 	border-radius: 10px;
 	// padding-top: 30px;
+	opacity: 0.3;
 }
+
 
 .comment-list {
 
-	border: 2px solid black;
+	// border: 2px solid black;
+	width: 50%;
+	position: relative;
+	bottom: 300px;
 
 
 }
 
 
+// Main Sports Feed Ends
+
+
+// Chat Column Starts
+
+
+.chatheader h2{
+
+	margin-left: 75px;
+	font-size: 28px;
+	// border: 2px solid red;
+	width: 100%;
+	text-align: center;
+
+}
+
+
+#messages {
+
+	border: 2px solid #4C71D4;
+	height: 500px;
+	width: 100%;
+	// position: relative;
+	// bottom: 100px;
+	margin-left: 80px;
+	padding-left: 10px;
+	overflow-y: scroll;
+	// margin-bottom: 300px;
+	border-radius: 5px;
+	background: linear-gradient(to right, $white, $lightgrey);
+
+}
+
+.message {
+
+	// background-color: $white;
+	font-size: 16px;
+		// border: 2px solid green;
+}
+
+
+.messages, .input-box {
+  height: 100%;
+  
+}
+
+.input-box_text {
+  font-size: 16px;
+  width: 100%;
+  margin-left: 80px;
+  margin-bottom: auto;
+  line-height: 1.2rem;
+  border: 2px solid #4C71D4;
+  border-radius: 0.2rem;
+  background-clip: padding-box;
+  color: #3d3c40;
+  box-shadow: none;
+  outline: 0;
+  bottom: 0;
+  min-height: 41px !important;
+  padding: 9px 5px 9px 8px;
+  background-color: $lightgrey;
+  // margin-left: 150px;
+
+}
 
 
 

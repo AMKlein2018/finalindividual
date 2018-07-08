@@ -1,12 +1,8 @@
 
 
 <div class = 'sportheader'>
-	<h1>Sports Feed: </h1>
+	<h2>The Main Feed: </h2>
 </div>
-
-
-
-	
 
 	<div class="container-fluid">
 		<div class="row content">
@@ -14,7 +10,7 @@
 		    <div class="col-md-2 sidenav">
 		    	<div class = "favoritescontainer">
 					<% if user_signed_in?%>
-							<strong><h3>Favorites:</h3></strong>
+							<strong><h2>Favorites:</h2></strong>
 								<%= form_for current_user, html: { method: :patch } do |f| %>	
 								
 									<%= collection_check_boxes(:user, :category_ids, Category.all, :id, :title) %>
@@ -30,7 +26,7 @@
 			<div class="col-md-6">
 				<div class = "postcontainer">
 					<% @blogs.each do |b| %>
-						<a href = "/blogs/<%= b.id %>"><hr>Article Post:</a><br />
+						<a href = "/blogs/<%= b.id %>">Article Post:</a><br />
 							Title: <%= b.title %> |
 							Sport: <%= b.category.title if b.category %><br />
 
@@ -55,12 +51,13 @@
 			
 							<div class = "textboxes">Content:<br /> <%= b.content %></div><br />
 							
-							<% b.comments.each_with_index do |c, index| %><br />
-								 <div class ='comment-list' ><%= index + 1 %>. Comment:<br /><br />
-									  <%= c.content %><br />
+							<% b.comments.each_with_index do |c, index| %>
+								 <div class ='comment-list' ><%= index + 1 %>. 
+									  <%= c.content %>
 								</div>
 							<% end %>
-					<% end %>
+						<hr>
+					<% end %>	
 				</div>
  			</div>
  			<!-- All Posted Listed (End) -->
@@ -68,7 +65,9 @@
  			<!-- Chat Feature (Start) -->
  			<div class="col-sm-3 sidenav">	
 	    			
- 					<h2>What's On Your Mind?</h2>
+ 					<div class="chatheader">
+ 						<h2>What's On Your Mind?</h2>
+ 					</div>
 	    			<div class="input-box">
 	    				<div id="messages">
 							<%=render @messages %>

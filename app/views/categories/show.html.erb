@@ -1,7 +1,7 @@
 
 
 <!-- Individual Category Sport Page (Start) -->
-<div class = "sportheader"><h1><%= @category.title %>:</h1></div>
+<div class = "sportheader"><h2><%= @category.title %>:</h2></div>
 
 
 <div class="container-fluid">
@@ -10,7 +10,7 @@
 		    <div class="col-md-2 sidenav">
 		    	<div class = "favoritescontainer">
 					<% if user_signed_in?%>
-							<strong><h3>Favorites:</h3></strong>
+							<strong><h2>Favorites:</h2></strong>
 								<%= form_for current_user, html: { method: :patch } do |f| %>
 								
 									<%= collection_check_boxes(:user, :category_ids, Category.all, :id, :title) %>		
@@ -25,9 +25,10 @@
 		<!-- Individual Category Sport Page (Start) -->
 		<div class="col-md-6">
 			<div class="postcontainer">
-				<% @category.blogs.each_with_index do |b, index|%>
-					<div class ='article-list' ><%= index + 1 %>. 
-					    Title: <%= b.title %><br />
+				<% @category.blogs.each_with_index do |b|%>
+					<a href = "/blogs/<%= b.id %>">Article Post:</a><br />
+					<!-- <div class ='article-list' >  -->
+					    Title: <%= b.title %> |
 					    Sport: <%= b.category.title if b.category %><br />
 
 					    <!-- Likes and Dislikes Functionality (Start) -->
@@ -46,36 +47,37 @@
 								<% end %>
 							</div>
 						<!-- Likes and Dislikes Functionality (End) -->
-
-					<div class="sportcontent">Content: <br /><%= b.content %><br /></div>
-					   	<% b.comments.each_with_index do |b, index| %>
+							<img src="<%= b.image.url()%>"/>
+						<div class="textboxes">Content: <br /><%= b.content %></div><br />
+						
+					<!-- </div> -->
+					
+						Comment:<br />
+						<% b.comments.each_with_index do |b, index| %> <br />
 					   	<%= index + 1 %>. 
 							<%= b.content %>
 						<% end %>
-						<img src="<%= b.image.url()%>"/>
-					</div>
 					<hr>
-						
 				<% end %>
 			</div>
 		</div>
 		<!-- Individual Category Sport Page (End) -->
 
-				<!-- Chat Feature (Start) -->
- 			<div class="col-sm-3 sidenav">	
-	    			
- 					<h2>What's On Your Mind?</h2>
-	    			<div class="input-box">
-	    				<div id="messages">
-							<%=render @messages %>
+			<!-- Chat Feature (Start) -->
+		<div class="col-sm-3 sidenav">	
+    			
+				<div class="chatheader"><h2>What's On Your Mind?</h2></div>
+    			<div class="input-box">
+    				<div id="messages">
+						<%=render @messages %>
+					</div>
+	      		    <div class="input-box">
+						<input type="text" class="input-box_text" id="message_input"/>
 						</div>
-		      		    <div class="input-box">
-    						<input type="text" class="input-box_text" id="message_input"/>
-  						</div>
-		 			</div>
-			</div>
-			
-			<!-- Chat Feature (End) -->
+	 			</div>
+		</div>
+		
+		<!-- Chat Feature (End) -->
 
 
 	</div>

@@ -1,13 +1,14 @@
 <div class = "sblogheader">
-	<h1>Current Article:</h1>
-	<div class = "showlinks">
-			<% if current_user && current_user.id === @blog.user_id %>
-				<%= link_to "Create New Post" , new_blog_path %> |
-				<%= link_to "Edit Post" , edit_blog_path %> |
-					<%= link_to "Delete Post", blog_path, method: :delete %> |
-			<% end %>
-		</div><br />
+	<h2>Current Article:</h2>
 </div>
+<div class = "showlinks">
+			<% if current_user && current_user.id === @blog.user_id %>
+				<%= link_to "Create New Post" , new_blog_path %> •
+				<%= link_to "Edit Post" , edit_blog_path %> •
+					<%= link_to "Delete Post", blog_path, method: :delete %> 
+			<% end %>
+</div><br />
+
 
 <div class="container-fluid">
 	<div class="row content">
@@ -20,28 +21,22 @@
 				<div class = "scontent"><br />Content: <br />
 					<%= @blog.content %>
 				</div>
-
+				<% if current_user && current_user.id === @blog.user_id %>
+					<% @blog.comments.each_with_index do |comment, index| %>
+				  		<div class = "addcomments"><hr><%= index + 1 %>. <%= comment.content %><br /><br />
+					  
+						  	<%= link_to "Edit", edit_blog_comment_path(:blog_id => @blog.id, :id => comment.id) %> •
+						  	<%= link_to "Delete", blog_comment_path(:blog_id => @blog.id, :id => comment.id), :method => :delete %>		 	
+						</div><br />
+					<% end %>
+				<% end %>
 			</div>
 		</div>
 			<div class="col-md-3 sidenav">
 				<div class= "createcomment">
 					<!-- update comments -->
-						<% @blog.comments do |c| %>
-							<%= c.content %>
-						<% end %>
-						
-						<br /> <%= render 'comments/form' %><br /><hr>
+						<br /> <%= render 'comments/form' %><br />
 			
-						<% if current_user && current_user.id === @blog.user_id %>
-							<% @blog.comments.each_with_index do |comment, index| %>
-						  		<div class = "addcomments"><%= index + 1 %>. <%= comment.content %><br /><br />
-							  <!-- <div class = "commentlinks"> -->
-							  
-								  	<%= link_to "Edit", edit_blog_comment_path(:blog_id => @blog.id, :id => comment.id) %> •
-								  	<%= link_to "Delete", blog_comment_path(:blog_id => @blog.id, :id => comment.id), :method => :delete %>		 	
-								</div><br />
-							<% end %>
-						<% end %>
 				</div>	
 	<!-- end update comments  -->
 			</div>

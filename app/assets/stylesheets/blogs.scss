@@ -27,7 +27,7 @@
 	padding-left: 100px;
 	padding-top: 5px;
 	// text-align: center;
-	background: linear-gradient(to right, $lightgrey , $dkblue);
+	background-color: $lightgrey;
 
 }
 
@@ -83,8 +83,8 @@ label
 [for="blog_category_id_8"] {
 	// margin-left: 3px;
 	padding-right: 10px;
-	color: #f7faff;
-	text-shadow: 2px 2px $hanblue;
+	color: $dkblue;
+	text-shadow: 2px 2px $white;
 }
 
 label
@@ -96,52 +96,82 @@ label
 
 // Blogs Show Page Start
 
-.sblogheader h1 {
+.sblogheader h2 {
 
-	text-align: center;
+		// text-align: center;	
+	font-size: 36px;
+	// margin-left: 100px;
 	color: $dkblue;
+	border: 2px solid $hanblue;
+	padding-left: 600px;
+	height: 60px;
+	padding-top: 10px;
+	position: relative;
+	bottom: 25px;
+	background: linear-gradient(to right, $white , $dkblue);
+	text-shadow: 2px 2px #4C71D4;
+	color: $white;
 
 }
 
 .showlinks {
 
-	border: 2px solid $hanblue;
-	text-align: center;
+	// border: 2px solid $hanblue;
+	// text-align: center;
 	font-size: 16px;
-	border-radius: 25px;
+	padding-left: 585px;
+	height: 20px;
+	position: relative;
+	bottom: 35px;
+	// border-radius: 25px;
 }
 
 
 .showpost {
 
-	border: 4px solid $dkblue;
+	border: 4px solid #17256b;
 	// position: relative;
-	width: 80%;
+	width: 100%;
 	// bottom: 380px;
 	height: 500px;
-	margin-left: 150px;
-	// padding-bottom: 500px;
+	margin-left: 100px;
+	padding-right: 10px;
+	// margin-bottom: 300px;
 	overflow-y: scroll;
 	border-radius: 25px;
 	font-size: 20px;
-	padding-left: 100px;
-	padding-top: 5px;
-	// text-align: center;
-	background: linear-gradient(to right, $lightgrey , $dkblue);
+	padding-left: 20px;
+	background: linear-gradient(to right, $white, $lightgrey);
+
 
 }
 
 .scontent {
 
-	border: 1px solid $white ;
-	width: 50%;
-	border-radius: 25px;
-	overflow-y: scroll;
+	border: 1px solid #4C71D4;
 	height: 300px;
+	width: 90%;
+	margin-left: 10px;
 	position: relative;
-	bottom: 150px;
+	bottom: 650px; 
+	background-color: $white;
+	opacity: 0.7;
+	overflow-y: scroll;
+	border-radius: 10px;
+	color: $black;
+
 
 }
+
+.addcomments {
+
+	position: relative;
+	bottom: 100px;
+
+
+
+}
+
 
 .createcomment {
 
@@ -151,10 +181,15 @@ label
 	font-size: 20px;
 	overflow-y: scroll;
 	border-radius: 25px;
+	height: 400px;
+	margin-left: 100px;
 	background: linear-gradient(to left, $lightgrey , $hanblue);
 
-
 }
+
+
+
+
 
 .updatecontainer {
 
@@ -183,6 +218,21 @@ label
 
 }
 
+.sportheader h2 {
+
+	text-align: center;	
+	font-size: 30px;
+	text-decoration: none;
+	border: 2px solid $hanblue;
+	height: 50px;
+	padding-top: 15px;
+	position: relative;
+	bottom: 30px;
+	background: linear-gradient(to right, $white , $dkblue);
+	text-shadow: 2px 2px #4C71D4;
+	color: $white;
+
+}
 
 
 

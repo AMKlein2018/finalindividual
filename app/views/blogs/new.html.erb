@@ -9,19 +9,26 @@
 			<div class = "createcontainer">
 				<%= form_for @blog do |f| %>
 					<div class = "createtitle">Title: <%= f.text_field :title %></div><br />
+						
+
+
+
+					
 					<div class="choosecategory">Choose Category: <%= f.collection_radio_buttons :category_id, Category.all, :id, :title %></div>
 					<hr>
-					<div class="field">
-					    <%= f.label :Uploaded_Images %><br>
-					    <%= f.file_field :image %>
-				  	</div><br>
 					<div class = "titlecontent">What's On Your Mind?:</div><br />
 
 					<div class = "createcontent"><%= f.text_area :content, :cols => 60, :rows => 5 %>
+						<div class = "contentsubmit"><%= f.submit "Create Sports Blog" %></div>
 					</div>
 					<br />
+					<div class="imagefield">
+					    <%= f.label :Upload_Images %><br>
+					    <%= f.file_field :image %>
+				  	</div><br>
 					
-					<div class = "contentsubmit"><%= f.submit "Create Sports Blog" %></div>
+					
+
 				<% end %>
 			</div>
 		</div>

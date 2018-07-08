@@ -6,17 +6,18 @@
 
 	border: 4px solid $dkblue;
 	text-align: center;
-	margin-left: 200px;
+	margin-left: 300px;
 	color: $dkblue;
-	height: 500px;
+	height: 300px;
 	border-radius: 25px;
-	background: linear-gradient(to right, $lightgrey, $dkblue);
+	background-color:  $lightgrey;
 
 }
 
 .commentheader {
-	font-size: 16px;
-	color: $white;
+	font-size: 20px;
+	color: $dkblue;
+	padding-top: 40px;
 	// text-shadow: 2px 2px $hanblue;
 
 }
@@ -32,5 +33,23 @@
 	border: 4px solid $dkblue;
 
 
+
+}
+
+.editcommentheader h2 {
+
+		// text-align: center;	
+	font-size: 36px;
+	// margin-left: 100px;
+	color: $dkblue;
+	border: 2px solid $hanblue;
+	padding-left: 600px;
+	height: 60px;
+	padding-top: 10px;
+	position: relative;
+	bottom: 25px;
+	background: linear-gradient(to right, $white , $dkblue);
+	text-shadow: 2px 2px #4C71D4;
+	color: $white;
 
 }

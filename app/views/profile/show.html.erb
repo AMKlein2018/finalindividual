@@ -7,7 +7,7 @@
 	<!-- Current Users Saved Categories (Start) -->
 	  	<div class="col-md-2 sidenav">
 			<div class="favoritescontainer">
-				<h2>Favorite Categories:</h2>
+				<h2>Favorites:</h2>
 				<% if current_user == @user %>
 					<%= form_for current_user, html: { method: :patch } do |f| %>
 						<%= collection_check_boxes(:user, :category_ids, Category.all, :id, :title) %>
@@ -20,19 +20,45 @@
 
 
 	<!-- Current Articles Posted According to Categories Saved (Start)-->
+
+	<div class ="favecategoryheader"><h2>Posts in Favorite Categories:</h2></div>
 		<div class="col-md-6">
-			<div class ="favecategoryheader"><h2>Posts in Favorite Categories:</h2></div>
-				<div class ="postcontainer">
+			<div class ="usercontainer">
 				<% @user.categories.each do |c| %>
 					<% c.blogs.each do |b| %>
-						<div>Title: <%= b.title %><br /> Sport: <%= b.category.title %><br />
-						</div>
-						Article Post: <%= b.content %><br />
-						
-			  				<img src="<%= b.image.url()%>">
-			  		<hr>
+						<a href = "/blogs/<%= b.id %>">Article Post:</a><br />
+							Title: <%= b.title %> |
+							Sport: <%= b.category.title if b.category %><br />
+
+						<!-- Likes and Dislikes Functionality (Start) -->
+							<div class ="caption" style= "text-align:left;">
+								<%=link_to like_blog_path(b), class: "like", method: :put do %>
+									<button type= "button" class="btn btn-info" aria-label="Left_Align">
+										<span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+										<span class="badge"><%= b.get_upvotes.size %></span>
+									</button>
+								<% end %>
+								<%=link_to like_blog_path(b), class: "dislike", method: :put do %>
+									<button type= "button" class="btn btn-info" aria-label="Left_Align">
+										<span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
+										<span class="badge"><%= b.get_downvotes.size %></span>
+									</button>
+								<% end %>
+							</div>
+						<!-- Likes and Dislikes Functionality (End) -->
+							
+						  		<img src="<%= b.image.url()%>"/>
+			
+							<div class = "textboxes">Content:<br /> <%= b.content %></div><br />
+							
+							<% b.comments.each_with_index do |c, index| %>
+								 <div class ='comment-list' ><%= index + 1 %>. 
+									  <%= c.content %>
+								</div>
+							<% end %>
+						<hr>
 					<% end %>
-				<% end %>
+				<% end %>	
 			</div>
 		</div>
 	<!-- Current Articles Posted According to Categories Saved (End)-->

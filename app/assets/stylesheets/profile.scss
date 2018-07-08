@@ -1,37 +1,52 @@
 @import "variables";
 
 
-
-// .favoriteposts {
-
-// 	position: relative;
-// 	top: 400px;
-
-
-// }
-
 .userheader {
 
-	text-align: center;	
+	// text-align: center;	
 	font-size: 24px;
-	text-decoration: none;
+	// margin-left: 100px;
+	color: $dkblue;
 	border: 2px solid $hanblue;
+	padding-left: 675px;
 	height: 60px;
-	padding-bottom: 10px;
+	padding-top: 5px;
 	position: relative;
-	bottom: 30px;
+	bottom: 40px;
 	background: linear-gradient(to right, $white , $dkblue);
 	text-shadow: 2px 2px #4C71D4;
 	color: $white;
-
 
 }
 
 .favecategoryheader h2 {
 
-	font-size: 30px;
+	font-size: 16px;
 	text-align: center;
+	position: relative;
+	bottom: 40px;
+	margin-left: 550px;
+	// border: 2px solid red;
+	width: 30%;
 
+}
+
+
+.usercontainer {
+
+	border: 4px solid #17256b;
+	position: relative;
+	width: 100%;
+	bottom: 30px;
+	height: 600px;
+	margin-left: 50px;
+	padding-right: 10px;
+	// margin-bottom: 300px;
+	overflow-y: scroll;
+	border-radius: 25px;
+	font-size: 20px;
+	padding-left: 20px;
+	background: linear-gradient(to right, $white, $lightgrey);
 
 
 }
@@ -39,6 +54,9 @@
 .userauthored {
 
 	text-align: center;
+	margin-left: 120px;
+	position: relative;
+	bottom: 40px;
 
 }
 
