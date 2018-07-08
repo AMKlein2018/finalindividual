@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :blogs do
       member do
         put "like" => "blogs#upvote"
-        put "unlike" => "blogs#downvote"
+        put "dislike" => "blogs#downvote"
       end
   end
 

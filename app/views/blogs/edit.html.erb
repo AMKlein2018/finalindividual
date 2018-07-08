@@ -1,29 +1,40 @@
-<div class = "updateblogheader"><h2>Update Sports Blog:</h2></div>
+<div class = "articleheader"><h2>Article Update:</h2></div>
 
-<!-- Update Article Post (Start) -->
-<%= form_for @blog do |u| %>
-	Title: <%= u.text_field :title %><br />
-	Sport: <%= @blog.category.title %><br />
-	<div class = "updatesubmit">
-		<%= u.submit "Update" %>
+
+
+
+<div class="container-fluid">
+	<div class="row content">
+		<div class="col-md-9"> 
+			<!-- Update Article Post (Start) -->
+			<div class = "updatecontainer">
+				<%= form_for @blog do |u| %>
+					Title: <%= u.text_field :title %><br />
+					Sport: <%= @blog.category.title %><br />
+					<div class = "updatesubmit">
+						<%= u.submit "Update" %>
+					</div>
+					<hr>
+					<div class = "upcontentheader"> Article Content:</div><br />
+					 <div class = "updatecontent"><%= u.text_area :content, :cols => 50, :rows => 8 %></div>
+					 <br />
+					<div class="field">
+					    <%= u.label :Uploaded_Images %><br>
+					    <%= u.file_field :image %>
+					    <% if u.object.image? %>
+				     		 <%= image_tag u.object.image.thumb.url %>
+				     		 <%= u.label :remove_image %>
+				      		 <%= u.check_box :remove_image %> 
+				      	<% end %>	
+				  	</div><br>
+						
+
+				<% end %>
+				<!-- Update Article Post (End) -->
+			</div>
+		</div>
 	</div>
-	<hr>
-	<div class = "upcontentheader">Blog Update:</div><br />
-	 <div class = "updatecontent"><%= u.text_area :content, :cols => 70, :rows => 13 %></div>
-	 <br />
-	<div class="field">
-	    <%= u.label :Uploaded_Images %><br>
-	    <%= u.file_field :image %>
-	    <% if u.object.image? %>
-     		 <%= image_tag u.object.image.thumb.url %>
-     		 <%= u.label :remove_image %>
-      		 <%= u.check_box :remove_image %> 
-      	<% end %>	
-  	</div><br>
-		
-
-<% end %>
-<!-- Update Article Post (End) -->
+</div>	
 
 
 

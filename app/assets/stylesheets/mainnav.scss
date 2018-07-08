@@ -38,13 +38,21 @@
 	background: linear-gradient(to right, $hanblue , $dkblue);
 }
 
-.sportheader {
+.sportheader h1 {
 
 	// text-align: center;	
-	font-size: 24px;
-	margin-left: 600px;
-	// border: 2px solid red;
-
+	font-size: 36px;
+	// margin-left: 100px;
+	color: $dkblue;
+	border: 2px solid $hanblue;
+	padding-left: 600px;
+	height: 60px;
+	padding-top: 10px;
+	position: relative;
+	bottom: 25px;
+	background: linear-gradient(to right, $white , $dkblue);
+	text-shadow: 2px 2px #4C71D4;
+	color: $white;
 
 }
 

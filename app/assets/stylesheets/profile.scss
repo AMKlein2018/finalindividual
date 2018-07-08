@@ -1,23 +1,56 @@
-// Place all the styles related to the profile controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
 
 
 
-.favoriteposts {
+// .favoriteposts {
 
-	position: relative;
-	top: 400px;
+// 	position: relative;
+// 	top: 400px;
 
 
-}
+// }
 
 .userheader {
 
-	// text-align: center;	
+	text-align: center;	
 	font-size: 24px;
-	margin-left: 600px;
-	// border: 2px solid red;
+	text-decoration: none;
+	border: 2px solid $hanblue;
+	height: 60px;
+	padding-bottom: 10px;
+	position: relative;
+	bottom: 30px;
+	background: linear-gradient(to right, $white , $dkblue);
+	text-shadow: 2px 2px #4C71D4;
+	color: $white;
 
 
 }
+
+.favecategoryheader h2 {
+
+	font-size: 30px;
+	text-align: center;
+
+
+
+}
+
+.userauthored {
+
+	text-align: center;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

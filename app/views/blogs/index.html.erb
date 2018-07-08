@@ -42,9 +42,9 @@
 										<span class="badge"><%= b.get_upvotes.size %></span>
 									</button>
 								<% end %>
-								<%=link_to like_blog_path(b), class: "like", method: :put do %>
+								<%=link_to like_blog_path(b), class: "dislike", method: :put do %>
 									<button type= "button" class="btn btn-info" aria-label="Left_Align">
-										<span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+										<span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
 										<span class="badge"><%= b.get_downvotes.size %></span>
 									</button>
 								<% end %>

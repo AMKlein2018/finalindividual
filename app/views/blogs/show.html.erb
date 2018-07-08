@@ -1,46 +1,76 @@
 <div class = "sblogheader">
-	<h1>Sport Post:</h1>
+	<h1>Current Article:</h1>
 	<div class = "showlinks">
-	<% if current_user && current_user.id === @blog.user_id %>
-			<%= link_to "Create New Post" , new_blog_path %> |
-			<%= link_to "Edit Post" , edit_blog_path %> |
-			<%= link_to "Delete Post", blog_path, method: :delete %> |
+			<% if current_user && current_user.id === @blog.user_id %>
+				<%= link_to "Create New Post" , new_blog_path %> |
+				<%= link_to "Edit Post" , edit_blog_path %> |
+					<%= link_to "Delete Post", blog_path, method: :delete %> |
+			<% end %>
 		</div><br />
-		<% end %>
-	</div>
-	<hr>
 </div>
-<div class="col-sm-9">
-	<div class= "sportpost">
-		Topic: <%= @blog.title %> |
-		Sport: <%= @blog.category.title %>
-		<div class = "scontent"><br />Content: <br />
-			<%= @blog.content %>
-			<img src="<%= @blog.image.url()%>">
-			<hr>
-			<% @blog.comments do |c| %>
-				<%= c.content %>
-			<% end %>
+
+<div class="container-fluid">
+	<div class="row content">
+		<!-- Current Article Being Viewed -->
+		<div class="col-md-8">
+			<div class= "showpost">
+				Topic: <%= @blog.title %> |
+				Sport: <%= @blog.category.title %>
+				<img src="<%= @blog.image.url()%>">
+				<div class = "scontent"><br />Content: <br />
+					<%= @blog.content %>
+				</div>
+
+			</div>
 		</div>
+			<div class="col-md-3 sidenav">
+				<div class= "createcomment">
+					<!-- update comments -->
+						<% @blog.comments do |c| %>
+							<%= c.content %>
+						<% end %>
+						
+						<br /> <%= render 'comments/form' %><br /><hr>
+			
+						<% if current_user && current_user.id === @blog.user_id %>
+							<% @blog.comments.each_with_index do |comment, index| %>
+						  		<div class = "addcomments"><%= index + 1 %>. <%= comment.content %><br /><br />
+							  <!-- <div class = "commentlinks"> -->
+							  
+								  	<%= link_to "Edit", edit_blog_comment_path(:blog_id => @blog.id, :id => comment.id) %> •
+								  	<%= link_to "Delete", blog_comment_path(:blog_id => @blog.id, :id => comment.id), :method => :delete %>		 	
+								</div><br />
+							<% end %>
+						<% end %>
+				</div>	
+	<!-- end update comments  -->
+			</div>
 	</div>
 </div>
 
-	
-<!-- update comments -->
-<br /> <%= render 'comments/form' %><br />
-		
-		<% if current_user && current_user.id === @blog.user_id %>
-			<% @blog.comments.each_with_index do |comment, index| %>
-			  	<div class = "addcomments"><%= index + 1 %>. <%= comment.content %><br /><br />
-				  <!-- <div class = "commentlinks"> -->
-				  
-					  	<%= link_to "Edit", edit_blog_comment_path(:blog_id => @blog.id, :id => comment.id) %> •
-					  	<%= link_to "Delete", blog_comment_path(:blog_id => @blog.id, :id => comment.id), :method => :delete %>		 	
-				</div><br />
-			<% end %>
-		<% end %>
 
-<!-- end update comments  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

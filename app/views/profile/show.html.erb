@@ -1,5 +1,5 @@
 <div class = "userheader">
-	<h1>User Profile Page:</h1>
+	<h2>User Profile Page:</h2>
 </div>
 
 <div class="container-fluid">
@@ -21,8 +21,8 @@
 
 	<!-- Current Articles Posted According to Categories Saved (Start)-->
 		<div class="col-md-6">
-			<div class ="postcontainer">
-				<h2>Posts in Favorite Categories:</h2>
+			<div class ="favecategoryheader"><h2>Posts in Favorite Categories:</h2></div>
+				<div class ="postcontainer">
 				<% @user.categories.each do |c| %>
 					<% c.blogs.each do |b| %>
 						<div>Title: <%= b.title %><br /> Sport: <%= b.category.title %><br />
