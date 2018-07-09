@@ -5,7 +5,12 @@ App.blog = App.cable.subscriptions.create "BlogChannel",
   disconnected: ->
     # Called when the subscription has been terminated by the server
 
-  received: (data) -> $('#messages').append data
+  received: (data) -> 
+
+    $messages = $('#messages')
+    $messages.append data
+    $messages.scrollTop $messages.prop('scrollHeight')
    
 
-  speak: (message) -> @perform 'speak', message: message
+  speak: (message) -> 
+  	@perform 'speak', message: message

@@ -5,10 +5,12 @@ Rails.application.routes.draw do
  end
 
   get "/profile/:id" => "profile#show"
-  get 'blogs/landing' => "blogs#landing"
+  # get 'blogs/landing' => "blogs#landing"
 
   patch "/users/:id", to: "user#update", as: 'edit_profile_favorites'
+  
   devise_for :users
+  
   root 'blogs#index'
   # resources :blogs
 

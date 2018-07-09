@@ -1,11 +1,11 @@
-
-	<div class="message">
-	  <span class="message_timestamp"><br />
-	    <%= message.created_at %><br />
-	  </span>
-	  <span class="message_star"></span>
-	  <span class="message_content">
-	    <%= message.content %>
-	  </span>
-	</div>
-
+<div class="message">
+  <a href="" class="message_profile-pic"></a><br />
+  <a href="" class="message_username"><%= message.user.email %></a><br />
+  <span class="message_timestamp">
+    <%= message.created_at %><br />
+  </span>
+  <span class="message_star"></span>
+  <span class="message_content">
+    <%= message.content %>
+  </span>
+</div>
