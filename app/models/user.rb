@@ -7,7 +7,8 @@ class User < ApplicationRecord
   acts_as_voter
   has_many :blogs, dependent: :destroy
   has_many :comments
-  has_many :categories
-  belongs_to :user
+  has_many :favorites
+  has_many :categories, through: :favorites
+  
 
 end

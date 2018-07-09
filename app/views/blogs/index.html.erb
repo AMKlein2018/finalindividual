@@ -15,7 +15,7 @@
 								
 									<%= collection_check_boxes(:user, :category_ids, Category.all, :id, :title) %>
 								
-									<%= f.submit 'Save' %>
+									<%= f.submit 'Save', data: { disable_with: false } %>
 								<% end %>
 					<% end %>
 				</div>

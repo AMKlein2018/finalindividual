@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :comments
  end
 
-  get "/profile/:id" => "profile#show"
+  get "/profile/:id" => "profile#show", as: 'user_profile'
   # get 'blogs/landing' => "blogs#landing"
 
   patch "/users/:id", to: "user#update", as: 'edit_profile_favorites'

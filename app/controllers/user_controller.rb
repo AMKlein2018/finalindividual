@@ -2,7 +2,15 @@ class UserController < ApplicationController
 
   def update
     @user = current_user
-    redirect_to root_path if @user.update(user_params)
+    p user_params
+    p '*******'
+    p user_params[:category_ids]
+    user_params[:category_ids].each do |id|
+    	if id != ""
+		    Favorite.create(user_id: @user.id, category_id: id)
+    	end
+    end
+    redirect_to user_profile_path(@user)
   end
 
   protected

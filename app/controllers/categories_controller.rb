@@ -5,16 +5,20 @@ class CategoriesController < ApplicationController
   def new
   end
 
+  def show
+    @category = Category.find(params[:id])
+    @messages = Message.all
+  end
+
   def edit
+    @category = Category.find(params[:id])
+
   end
 
   def update
   end
 
-  def show
-  	@category = Category.find(params[:id])
-    @messages = Message.all
-  end
+  
 
   def destroy
     @category = Category.find(params[:id])
