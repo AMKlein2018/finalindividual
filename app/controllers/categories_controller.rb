@@ -8,6 +8,9 @@ class CategoriesController < ApplicationController
   def edit
   end
 
+  def update
+  end
+
   def show
   	@category = Category.find(params[:id])
     @messages = Message.all
@@ -17,6 +20,19 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @category.destroy
     redirect_to "/users"
+  end
+
+
+
+   def upvote
+    @blog.upvote_from current_user
+    redirect_to category_path
+
+  end
+
+  def downvote
+    @blog.downvote_from current_user
+    redirect_to category_path
   end
 
 

@@ -58,6 +58,14 @@ class BlogsController < ApplicationController
     redirect_to blogs_path
   end
 
+  def landing
+    render_to "blogs/landing"
+  end
+
+  def after_sign_out_path_for(resource_or_scope)
+    redirect_to "blogs/landing"
+  end
+
 
 	private
 def blog_params
