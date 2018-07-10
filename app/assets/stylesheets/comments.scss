@@ -10,8 +10,7 @@
 	color: $dkblue;
 	height: 300px;
 	border-radius: 25px;
-	background-color:  $lightgrey;
-
+	background: linear-gradient(to right, $white, $lightgrey);
 }
 
 .commentheader {

@@ -149,26 +149,42 @@ label
 .scontent {
 
 	border: 1px solid #4C71D4;
-	height: 300px;
+	height: 260px;
 	width: 90%;
-	margin-left: 10px;
-	position: relative;
-	bottom: 550px; 
+	margin: 10px auto;
+	position: absolute;
+	// bottom: 300px; 
+	top: 20px;
+	left: 5%;
 	background-color: $white;
 	opacity: 0.7;
 	overflow-y: scroll;
 	border-radius: 10px;
 	color: $black;
+	font-size: 16px;
 
+}
 
+.scontent h3 {
+
+	text-align: center;
+	color: $dkblue;
 }
 
 .addcomments {
 
 	position: relative;
-	bottom: 100px;
-
-
+	bottom: 300px;
+	font-size: 16px;
+	margin-left: 50px;
+	overflow-y: scroll;
+	text-align: center;
+	border: 2px solid $hanblue;
+	height: 70%;
+	width: 90%;
+	border-radius: 25px;
+	opacity: 0.9;
+	background: linear-gradient(to right, $white , $lightgrey);
 
 }
 

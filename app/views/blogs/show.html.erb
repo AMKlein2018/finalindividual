@@ -14,7 +14,7 @@
 	<div class="row content">
 		<!-- Current Article Being Viewed -->
 		<div class="col-md-8">
-			<div class= "showpost">
+			<div class= "post-container">
 				
 				<img src="<%= @blog.image.url()%>">
 				
@@ -23,25 +23,36 @@
 					<strong>Sport:</strong> <%= @blog.category.title %><br /><br />
 					<%= @blog.content %>
 				</div>
+
+			<!-- Diplay of Current Comment Starts -->
 				
 				<% if current_user && current_user.id === @blog.user_id %>
 					<% @blog.comments.each_with_index do |comment, index| %>
-				  		<div class = "addcomments"><hr><%= index + 1 %>. <%= comment.content %><br /><br />
+				  		<div class = "addcomments">
+				  			<a href="" class="message_username"><%= current_user.email %></a><br />
+
+				  			<%= index + 1 %>. <%= comment.content %><br /><br />
 					  
 						  	<%= link_to "Edit", edit_blog_comment_path(:blog_id => @blog.id, :id => comment.id) %> •
-						  	<%= link_to "Delete", blog_comment_path(:blog_id => @blog.id, :id => comment.id), :method => :delete %>		 	
+
+						  	<%= link_to "Delete", blog_comment_path(:blog_id => @blog.id, :id => comment.id), :method => :delete %><hr>	
+						  		 	
 						</div><br />
 					<% end %>
 				<% end %>
+			<!-- Diplay of Current Comment Ends -->
+
 			</div>
 		</div>
+
+			<!-- Created Comment Starts  -->
 			<div class="col-md-3 sidenav">
 				<div class= "createcomment">
 					<!-- update comments -->
 						<br /> <%= render 'comments/form' %><br />
-			
 				</div>	
-	<!-- end update comments  -->
+
+			<!-- Created Comment Ends  -->
 			</div>
 	</div>
 </div>
