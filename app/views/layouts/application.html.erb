@@ -4,36 +4,111 @@
     <title>Finalindividual</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.0/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Lato|Roboto" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <%= stylesheet_link_tag 'application', media: 'all','data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application','data-turbolinks-track': 'reload' %>
+  
   </head>
 
   <body>
 
-    <nav>
-        
-        <% if !signed_in? %>
+    <header>
+      <h1>MadJul Sports</h1>
+    </header>
 
-          <a href='/users/sign_up'>Sign up</a> •
-          <a href='/users/sign_in'>Log In</a> 
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <!-- <div class="container-fluid"> -->
+    <nav class= "mainnav" >
+         <a class="navbar-brand" href="#">MadJul Sports</a>
+        <ul class="nav navbar-nav navbar-right">
+          <% if !signed_in? %>
+
+            <li><a href='/users/sign_up'>Sign up</a></li> •
+            <li><a href='/users/sign_in'>Log In</a></li>
           <% end %>
-
+        </ul>  
+        <ul class="nav navbar-nav">
           <% if signed_in? %>
-          <a href='/'>Home</a> •
-          <%= link_to "New Post", new_blog_path %> •
-          <%= link_to "Edit Account",  edit_user_registration_path %> •
-          <%= link_to "Sign out",destroy_user_session_path, method: :delete %> •
-        
-          <a href='/profile/<%=current_user.id %>'<%= current_user.id %>'><%= current_user.email %></a>
-          <% end %>
+            <li><a href='/'>Home</a></li> •
+            <li><%= link_to "New Post", new_blog_path %></li> •
+            <li><%= link_to "Edit Account",  edit_user_registration_path %></li> •
+            <li><%= link_to "Sign out",destroy_user_session_path, method: :delete %></li> •
+        </ul>  
+
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href='/profile/<%=current_user.id %>'<%= current_user.id %>'><%= current_user.email %></a></li>
+        </ul>
+        <% end %>
     </nav>
+      
+    <nav class = "sportnav">
+            <% if signed_in? %>
+                      <% Category.all.each do |c|  %>
+                      <%= link_to c.title, category_path(c) %> •
+                      <% end %>
+            <% end %>
+    </nav>
+  <!-- </div> -->
+</nav>
+  
+  <hr>
+    
 
 
+    <div id="background"></div>
+    
+       <%= yield %>
+ 
+    <div class="footer">
+      <footer class="container-fluid text-center">
+        
 
+      </footer>
+    </div>
+      
+   
+     
 
-
-
-    <%= yield %>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

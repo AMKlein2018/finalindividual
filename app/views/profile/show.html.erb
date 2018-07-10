@@ -1,14 +1,97 @@
-<div class = "profileheader">
-	<h1>User Profile Page:</h1>
+<div class = "userheader">
+	<h2>Your Favorite Articles:</h2>
 </div>
-		
 
-	<div class = "userblogs">
-		<% @user.blogs.each do |b| %><br />
-			<div>Title: <%= b.title %><br /> Sport: <%= b.category %><br />
+<div class="container-fluid">
+	<div class="row content">
+	<!-- Current Users Saved Categories (Start) -->
+	  	<div class="col-md-2 sidenav">
+			<div class="favoritescontainer">
+				<h2>Favorites:</h2>
+				<% if current_user == @user %>
+					<%= form_for current_user, html: { method: :patch } do |f| %>
+						<%= collection_check_boxes(:user, :category_ids, Category.all, :id, :title) %>
+						<%= f.submit 'Save', data: { disable_with: false } %> 
+					<% end %>
+				<% end %>
 			</div>
-			Blog Post: <%= b.content %><br />
-			<hr>
-		<% end %>
+		</div>
+	<!-- Current Users Saved Categories (End) -->
+
+
+	<!-- Current Articles Posted According to Categories Saved (Start)-->
+
+	<!-- <div class ="favecategoryheader"><h2>Posts in Favorite Categories:</h2></div> -->
+		<div class="col-md-6">
+			<div class ="usercontainer">
+				<% @user.categories.each do |c| %>
+					<% c.blogs.each do |b| %>
+						<a href = "/blogs/<%= b.id %>">Article Post:</a><br />
+							<strong>Sport:</strong> <%= b.category.title if b.category %><br />
+
+						<!-- Likes and Dislikes Functionality (Start) -->
+							<div class ="caption" style= "text-align:left;">
+								<%=link_to like_blog_path(b), class: "like", method: :put do %>
+									<button type= "button" class="btn btn-info" aria-label="Left_Align">
+										<span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+										<span class="badge"><%= b.get_upvotes.size %></span>
+									</button>
+								<% end %>
+								<%=link_to dislike_blog_path(b), class: "dislike", method: :put do %>
+									<button type= "button" class="btn btn-info" aria-label="Left_Align">
+										<span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
+										<span class="badge"><%= b.get_downvotes.size %></span>
+									</button>
+								<% end %>
+							</div>
+						<!-- Likes and Dislikes Functionality (End) -->
+						<div class="post-container">
+						  		<img src="<%= b.image.url()%>"/>
+			
+									<!-- Article Content Section Starts -->
+			
+							<div class = "textboxes">
+								<strong><h3>Title: <%= b.title %></h3></strong>
+								<br />
+								<%= b.content %>
+							</div><br />
+						</div>
+						<!-- Article Content Section Ends -->
+
+
+							<!-- Comments Section Starts -->
+							<div class="commentsection"><strong><h3>Comments Section:</h3></strong>
+								<% b.comments.each_with_index do |c, index| %><br />
+									 <a href="" class="message_username"><%= current_user.email %></a><br /><%= index + 1 %>. 
+										  <%= c.content %>
+								<% end %>
+
+							</div>
+						<hr>
+					<% end %>
+				<% end %>	
+			</div>
+		</div>
+	<!-- Current Articles Posted According to Categories Saved (End)-->
+
+			<!-- Chat Feature (Start) -->
+ 			<div class="col-sm-3 sidenav">	
+	    			
+ 					<div class="chatheader">
+ 						<h2>What's On Your Mind?</h2>
+ 					</div>
+	    			<div class="input-box">
+	    				<div id="messages">
+							<%=render @messages %>
+						</div>
+		      		    <div class="input-box">
+    						<input type="text" class="input-box_text" id="message_input"/>
+  						</div>
+		 			</div>
+			</div>
+			
+			<!-- Chat Feature (End) -->
 	</div>
-		
+</div>
+
+

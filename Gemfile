@@ -30,10 +30,15 @@ gem 'devise'
 gem 'devise-bootstrap-views'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
+gem 'carrierwave', '~> 1.0'
+gem "mini_magick"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-# gem 'bootstrap', '~> 4.0'
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+
+# Acts_as_Votable
+gem 'acts_as_votable', '~> 0.11.1'
 
 # source "https://rails-assets.org" do
 #   gem "rails-assets-tether"

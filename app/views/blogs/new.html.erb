@@ -1,16 +1,39 @@
-<div class = "createblogheader"><h3>Create Sports Blog:</h3></div>
+<div class = 'sportheader'><h2>Create Sports Post:</h2></div>
+
+
+<!-- Create A New Post (Start) -->
+
+<div class="container-fluid">
+	<div class="row content">
+		<div class="col-md-9">
+			<div class = "createcontainer">
+				<%= form_for @blog do |f| %>
+					<div class = "createtitle">Title: <%= f.text_field :title %></div><br />
+						
 
 
 
-<%= form_for @blog do |f| %>
-	Title: <%= f.text_field :title %><br />
-	Sport Type: <%= f.text_field :category %><br />
-	<hr>
-	<div class = "blogcontent">Blog Content:</div><br />
-	<div class = "createcontent"><%= f.text_area :content, :cols => 70, :rows => 13%>
+					
+					<div class="choosecategory">Choose Category: <%= f.collection_radio_buttons :category_id, Category.all, :id, :title %></div>
+					<hr>
+					<div class = "titlecontent">What's On Your Mind?:</div><br />
+
+					<div class = "createcontent"><%= f.text_area :content, :cols => 60, :rows => 5 %>
+						<div class = "contentsubmit"><%= f.submit "Create Sports Blog" %></div>
+					</div>
+					<br />
+					<div class="imagefield">
+					    <%= f.label :Upload_Images %><br>
+					    <%= f.file_field :image %>
+				  	</div><br>
+					
+					
+
+				<% end %>
+			</div>
+		</div>
 	</div>
-	<br />
-	
-	<div class = "contentsubmit"><%= f.submit "Create Sports Blog" %></div>
-<% end %>
+</div>
 
+<!-- Create A New Post (End) -->
+ 
