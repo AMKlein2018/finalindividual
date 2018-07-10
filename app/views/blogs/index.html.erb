@@ -45,18 +45,19 @@
 								<% end %>
 							</div>
 						<!-- Likes and Dislikes Functionality (End) -->
-							
-						  		<img src="<%= b.image.url()%>"/>
+						<div class="post-container">
+						  	
+						  	<img src="<%= b.image.url()%>"/>
 
 						<!-- Article Content Section Starts -->
-			
 							<div class = "textboxes">
 								<strong><h3>Title: <%= b.title %></h3></strong>
 								<br />
 								<%= b.content %>
 							</div><br />
+			
+						</div> 		
 						<!-- Article Content Section Ends -->
-
 
 							<!-- Comments Section Starts -->
 							<div class="commentsection"><strong><h3>Comments Section:</h3></strong>

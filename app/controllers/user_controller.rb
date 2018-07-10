@@ -2,6 +2,9 @@ class UserController < ApplicationController
 
   def update
     @user = current_user
+    @user.favorites.each do |favorite|
+      favorite.destroy
+    end
     user_params[:category_ids].each do |id|
     	if id != ""
 		    Favorite.create(user_id: @user.id, category_id: id)
@@ -9,6 +12,11 @@ class UserController < ApplicationController
     end
     redirect_to user_profile_path(@user)
   end
+
+  def destroy
+
+  end
+
 
   protected
 

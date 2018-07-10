@@ -17,10 +17,13 @@
 			<div class= "showpost">
 				
 				<img src="<%= @blog.image.url()%>">
+				
 				<div class = "scontent"><strong><h3>Title: <%= @blog.title %></h3></strong>
-				<strong>Sport:</strong> <%= @blog.category.title %><br /><br />
+
+					<strong>Sport:</strong> <%= @blog.category.title %><br /><br />
 					<%= @blog.content %>
 				</div>
+				
 				<% if current_user && current_user.id === @blog.user_id %>
 					<% @blog.comments.each_with_index do |comment, index| %>
 				  		<div class = "addcomments"><hr><%= index + 1 %>. <%= comment.content %><br /><br />

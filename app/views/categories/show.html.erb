@@ -45,14 +45,15 @@
 								<% end %>
 							</div>
 						<!-- Likes and Dislikes Functionality (End) -->
+						<div class="post-container">
 							<img src="<%= b.image.url()%>"/>
 
 						<!-- Article Content Section Starts -->
-						<div class = "textboxes"><strong><h3>Title: <%= b.title %> </h3></strong>
-								<%= b.content %>
-						</div><br />
+							<div class = "textboxes"><strong><h3>Title: <%= b.title %> </h3></strong>
+									<%= b.content %>
+							</div><br />
 						<!-- Article Content Section Ends -->
-						
+						</div>
 						<!-- Comments Section Starts -->
 					<div class="commentsection"><strong><h3>Comments Section:</h3></strong>
 						<% b.comments.each_with_index do |b, index| %> <br />
