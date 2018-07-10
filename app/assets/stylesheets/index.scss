@@ -81,12 +81,20 @@ button {
 	width: 90%;
 	margin-left: 10px;
 	position: relative;
-	bottom: 450px; 
+	bottom: 400px; 
 	background-color: $white;
 	opacity: 0.7;
 	overflow-y: scroll;
 	border-radius: 10px;
 	color: $black;
+
+}
+
+.textboxes h3 {
+
+	text-align: center;
+	color: $dkblue;
+
 
 }
 

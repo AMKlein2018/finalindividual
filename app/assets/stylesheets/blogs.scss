@@ -235,7 +235,28 @@ label
 }
 
 
+.commentsection {
 
+	border: 1px solid #4C71D4;
+	height: 200px;
+	background: linear-gradient(to right, $white , $hanblue);
+	position: relative;
+	bottom: 200px;
+	border-radius: 10px;
+	overflow-y: scroll;
+	padding-bottom: 300px;
+
+
+} 
+
+
+.commentsection h3 {
+
+	text-align: center;
+	color: $dkblue;
+
+
+}
 
 
 

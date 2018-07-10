@@ -29,3 +29,19 @@
 
 }
 
+.showheader h2 {
+
+	text-align: center;	
+	font-size: 30px;
+	text-decoration: none;
+	border: 2px solid $hanblue;
+	height: 50px;
+	padding-top: 15px;
+	position: relative;
+	bottom: 30px;
+	background: linear-gradient(to right, $white , #829BE1);
+	text-shadow: 2px 2px $hanblue;
+	color: $white;
+
+}
+

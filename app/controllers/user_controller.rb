@@ -2,9 +2,6 @@ class UserController < ApplicationController
 
   def update
     @user = current_user
-    p user_params
-    p '*******'
-    p user_params[:category_ids]
     user_params[:category_ids].each do |id|
     	if id != ""
 		    Favorite.create(user_id: @user.id, category_id: id)

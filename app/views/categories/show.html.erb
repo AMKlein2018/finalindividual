@@ -1,7 +1,7 @@
 
 
 <!-- Individual Category Sport Page (Start) -->
-<div class = "sportheader"><h2><%= @category.title %>:</h2></div>
+<div class = "showheader"><h2><%= @category.title %>:</h2></div>
 
 
 <div class="container-fluid">
@@ -27,10 +27,8 @@
 			<div class="postcontainer">
 				<% @category.blogs.each_with_index do |b|%>
 					<a href = "/blogs/<%= b.id %>">Article Post:</a><br />
+					<strong>Sport:</strong> <%= b.category.title if b.category %><br /><br />
 					<!-- <div class ='article-list' >  -->
-					    Title: <%= b.title %> |
-					    Sport: <%= b.category.title if b.category %><br />
-
 					    <!-- Likes and Dislikes Functionality (Start) -->
 							<div class ="caption" style= "text-align:left;">
 								<%=link_to category_path(b), class: "like", method: :put do %>
@@ -48,16 +46,22 @@
 							</div>
 						<!-- Likes and Dislikes Functionality (End) -->
 							<img src="<%= b.image.url()%>"/>
-						<div class="textboxes">Content: <br /><%= b.content %></div><br />
+
+						<!-- Article Content Section Starts -->
+						<div class = "textboxes"><strong><h3>Title: <%= b.title %> </h3></strong>
+								<%= b.content %>
+						</div><br />
+						<!-- Article Content Section Ends -->
 						
-					<!-- </div> -->
-					
-						Comment:<br />
+						<!-- Comments Section Starts -->
+					<div class="commentsection"><strong><h3>Comments Section:</h3></strong>
 						<% b.comments.each_with_index do |b, index| %> <br />
-					   	<%= index + 1 %>. 
+						 <a href="" class="message_username"><%= current_user.email %></a><br /><%= index + 1 %>. 
 							<%= b.content %>
 						<% end %>
+					</div>
 					<hr>
+					<!-- Comments Section Ends -->
 				<% end %>
 			</div>
 		</div>

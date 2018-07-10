@@ -5,7 +5,7 @@ Rails.application.routes.draw do
  end
 
   get "/profile/:id" => "profile#show", as: 'user_profile'
-  # get 'blogs/landing' => "blogs#landing"
+  get '/landing' => "blogs#landing", as: 'blogs_landing'
 
   patch "/users/:id", to: "user#update", as: 'edit_profile_favorites'
   

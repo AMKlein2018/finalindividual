@@ -1,5 +1,5 @@
 <div class = "userheader">
-	<h2>User Profile Page:</h2>
+	<h2>Your Favorite Articles:</h2>
 </div>
 
 <div class="container-fluid">
@@ -21,14 +21,13 @@
 
 	<!-- Current Articles Posted According to Categories Saved (Start)-->
 
-	<div class ="favecategoryheader"><h2>Posts in Favorite Categories:</h2></div>
+	<!-- <div class ="favecategoryheader"><h2>Posts in Favorite Categories:</h2></div> -->
 		<div class="col-md-6">
 			<div class ="usercontainer">
 				<% @user.categories.each do |c| %>
 					<% c.blogs.each do |b| %>
 						<a href = "/blogs/<%= b.id %>">Article Post:</a><br />
-							Title: <%= b.title %> |
-							Sport: <%= b.category.title if b.category %><br />
+							<strong>Sport:</strong> <%= b.category.title if b.category %><br />
 
 						<!-- Likes and Dislikes Functionality (Start) -->
 							<div class ="caption" style= "text-align:left;">
@@ -49,13 +48,24 @@
 							
 						  		<img src="<%= b.image.url()%>"/>
 			
-							<div class = "textboxes">Content:<br /> <%= b.content %></div><br />
-							
-							<% b.comments.each_with_index do |c, index| %>
-								 <div class ='comment-list' ><%= index + 1 %>. 
-									  <%= c.content %>
-								</div>
-							<% end %>
+									<!-- Article Content Section Starts -->
+			
+							<div class = "textboxes">
+								<strong><h3>Title: <%= b.title %></h3></strong>
+								<br />
+								<%= b.content %>
+							</div><br />
+						<!-- Article Content Section Ends -->
+
+
+							<!-- Comments Section Starts -->
+							<div class="commentsection"><strong><h3>Comments Section:</h3></strong>
+								<% b.comments.each_with_index do |c, index| %><br />
+									 <a href="" class="message_username"><%= current_user.email %></a><br /><%= index + 1 %>. 
+										  <%= c.content %>
+								<% end %>
+
+							</div>
 						<hr>
 					<% end %>
 				<% end %>	
@@ -63,19 +73,23 @@
 		</div>
 	<!-- Current Articles Posted According to Categories Saved (End)-->
 
-
-
-	<!-- Current Users Authored Posts (Start) -->
-		<div class="col-sm-3 sidenav">		
-			<div class = "userblogs">
-				<div class="userauthored">
-					<h2>Authored Posts:</h2>
-					<% @user.blogs.count do |b| %><br />
-					<% end %>
-				</div>
+			<!-- Chat Feature (Start) -->
+ 			<div class="col-sm-3 sidenav">	
+	    			
+ 					<div class="chatheader">
+ 						<h2>What's On Your Mind?</h2>
+ 					</div>
+	    			<div class="input-box">
+	    				<div id="messages">
+							<%=render @messages %>
+						</div>
+		      		    <div class="input-box">
+    						<input type="text" class="input-box_text" id="message_input"/>
+  						</div>
+		 			</div>
 			</div>
-		</div>
-	<!-- Current Users Authored Posts (End) -->
+			
+			<!-- Chat Feature (End) -->
 	</div>
 </div>
 

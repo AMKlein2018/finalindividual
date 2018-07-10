@@ -15,10 +15,10 @@
 		<!-- Current Article Being Viewed -->
 		<div class="col-md-8">
 			<div class= "showpost">
-				Topic: <%= @blog.title %> |
-				Sport: <%= @blog.category.title %>
+				
 				<img src="<%= @blog.image.url()%>">
-				<div class = "scontent"><br />Content: <br />
+				<div class = "scontent"><strong><h3>Title: <%= @blog.title %></h3></strong>
+				<strong>Sport:</strong> <%= @blog.category.title %><br /><br />
 					<%= @blog.content %>
 				</div>
 				<% if current_user && current_user.id === @blog.user_id %>
