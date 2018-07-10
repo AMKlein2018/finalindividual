@@ -13,9 +13,7 @@ class UserController < ApplicationController
     redirect_to user_profile_path(@user)
   end
 
-  def destroy
-
-  end
+ 
 
 
   protected
