@@ -39,6 +39,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
 # Acts_as_Votable
 gem 'acts_as_votable', '~> 0.11.1'
+gem 'news-api', '~> 0.0.0'
 
 # source "https://rails-assets.org" do
 #   gem "rails-assets-tether"

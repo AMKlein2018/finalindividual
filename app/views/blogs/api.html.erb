@@ -1,5 +1,30 @@
-<%@top_headlines.each do |t|%>
-<p><strong>Title:</strong> <%=t.title%></p>
-<p><strong>Description:</strong><%=t.description%></p>
-<p><img src="<%=t.urlToImage%>"></p>
-<%end%>
+<div class = 'sportheader'>
+	<h2>Live Feed: </h2>
+</div>
+
+	<div class="container-fluid">
+		<div class="row content">
+			<div class="col-md-1 sidenav">
+		    	<div class = "favoritescontainer"></div>
+		    </div>
+			<div class="col-md-9">
+				<div class = "postcontainer">
+
+					<%@top_headlines.each do |t|%>
+					<p><strong>Title: </strong> <%=link_to t.title, t.url%></p>
+					<p><strong>Author: </strong><%=t.author %></p>
+					<p><strong>Description:<br /> </strong><%=t.description%></p>
+					<p><div class="imgsrc"><img src ="<%=t.urlToImage%>"></div></p>
+					<%end%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+

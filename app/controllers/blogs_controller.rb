@@ -1,6 +1,9 @@
 class BlogsController < ApplicationController
   before_action :index, :show, only:[:upvote, :downvote]
   before_action :authenticate_user!
+
+  require 'news-api'
+  
   def index
   	@blogs = Blog.all.order(:cached_votes_score => :desc)
     @messages = Message.all
