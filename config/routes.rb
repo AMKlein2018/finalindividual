@@ -3,6 +3,9 @@ Rails.application.routes.draw do
  resources :blogs do
   resources :comments
  end
+  get 'rooms/show' => "rooms#show"
+
+  get '/api' => "blogs#api"
 
   get "/profile/:id" => "profile#show", as: 'user_profile'
   get '/landing' => "blogs#landing", as: 'blogs_landing'

@@ -62,6 +62,12 @@ class BlogsController < ApplicationController
     
   end
 
+  def api
+    $newsapi = News.new("c1f1d9a225f348baab718198cab1037e")
+    @top_headlines=$newsapi.get_top_headlines(sources: "espn")
+
+  end
+
  
 
 	private
