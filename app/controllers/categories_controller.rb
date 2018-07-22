@@ -1,4 +1,8 @@
 class CategoriesController < ApplicationController
+  before_action :show, only:[:upvote, :downvote]
+  before_action :authenticate_user!
+
+
   def index
   end
 
@@ -6,6 +10,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @blogs = Blog.all.order(:cached_votes_score => :desc)
     @category = Category.find(params[:id])
     @messages = Message.all
   end
