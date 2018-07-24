@@ -1,6 +1,6 @@
 class BlogChannel < ApplicationCable::Channel
   def subscribed
-    stream_from "blog_channel"
+    # stream_from "blog_channel"
   end
 
   def unsubscribed
@@ -8,6 +8,6 @@ class BlogChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-  	Message.create content: data['message'], user: current_user
+  	# Message.create content: data['message'], user: current_user
   end
 end

@@ -7,30 +7,36 @@
         		<h5>Chatrooms</h5>
         		<ul>
 		        	<% current_user.chatrooms.each do |chatroom| %>
-		            	<li><%= link_to chatroom.name, chatroom %></li>
+		            	<li><%= link_to chatroom.name, chatroom, data: {behavior: "chatroom-link", chatroom_id: chatroom.id} %></li>
 	          	  	<% end %>
         		</ul> 
       		<% end %>
 	    </div>
 
-	    <div class="col-sm-10 col-sm-offset-2">
-			<p>
-			  <strong>Name:</strong>
-			  <%= @chatroom.name %>
-			</p>
+	    <div class="col-sm-6 col-sm-offset-2">
+			<div class="chatheader">
+				<p>
+				  <strong>Name:</strong>
+				  <%= @chatroom.name %>
+				</p>
+			</div>
 			<%= link_to 'Edit', edit_chatroom_path(@chatroom) %> |
 			<%= link_to 'Back', chatrooms_path %>
+			<div class="input-box">
 
-			<div data-behavior='messages'>
-				<% @messages.each do |message| %>
-					<div><strong><%= message.user.username %>:</strong><%= message.body %></div>
-				<% end %>
-			</div>
-
-			<%= form_for [@chatroom, Message.new] do |f| %>
-				<%= f.text_field :body, rows: 1, class: "form-control", autofocus: true %>
-			<% end %>
-			
+	            <div data-behavior='messages' data-chatroom-id='<%= @chatroom.id %>'>
+	              <div id="messages">
+	                <% @messages.each do |message| %>
+	                  <%= render message %>
+	                <% end %> 
+	              </div>
+	              <div class="input-box">
+	              <%= form_for [@chatroom, Message.new], remote: true do |f| %>
+	              <!-- <input type="text" class="input-box_text" id="message_input"/> -->
+	             <%= f.text_area :body, rows: 1, class: "input-box_text", autofocus: true %> 
+	              <% end %> 
+	            </div>
+	        </div>	
 		</div>
   	</div>
 </div>

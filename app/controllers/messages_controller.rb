@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
 		message.user = current_user
 		message.save
 		redirect_to @chatroom
-		# MessageRelayJob.perform_later(message)
+		MessageRelayJob.perform_later(message)
 	end
 
 	
