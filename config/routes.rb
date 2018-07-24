@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :chatrooms
+
+
+  
  resources :blogs do
   resources :comments
  end
-  get 'rooms/show' => "rooms#show"
 
   get '/api' => "blogs#api"
 
