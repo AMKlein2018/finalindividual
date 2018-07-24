@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :chatrooms
+  resources :chatrooms do
+    resource :chatroom_users
+  end
 
 
   

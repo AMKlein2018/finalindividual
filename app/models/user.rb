@@ -10,8 +10,8 @@ class User < ApplicationRecord
   has_many :favorites
   has_many :categories, through: :favorites
   has_many :chatroom_users
-  has_many :chatrooms, through: :chatrooms_users
-  has_many :messages
-  
+  has_many :chatrooms, through: :chatroom_users
+  has_many :messages  
+
 
 end
