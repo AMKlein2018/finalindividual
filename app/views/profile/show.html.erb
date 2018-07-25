@@ -22,7 +22,7 @@
 	<!-- Current Articles Posted According to Categories Saved (Start)-->
 
 	<!-- <div class ="favecategoryheader"><h2>Posts in Favorite Categories:</h2></div> -->
-		<div class="col-md-6">
+		<div class="col-md-8">
 			<div class ="usercontainer">
 				<% @user.categories.each do |c| %>
 					<% c.blogs.each do |b| %>
@@ -77,17 +77,17 @@
 			<!-- Chat Feature (Start) -->
  			<div class="col-sm-3 sidenav">	
 	    			
- 					<div class="chatheader">
+ 					<!-- <div class="chatheader">
  						<h2>What's On Your Mind?</h2>
  					</div>
 	    			<div class="input-box">
 	    				<div id="messages">
-							<%=render @messages %>
+							<%= @messages %>
 						</div>
 		      		    <div class="input-box">
     						<input type="text" class="input-box_text" id="message_input"/>
   						</div>
-		 			</div>
+		 			</div> -->
 			</div>
 			
 			<!-- Chat Feature (End) -->

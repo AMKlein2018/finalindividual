@@ -1,5 +1,11 @@
-<div><strong><%= message.user.username %>:</strong><%= message.body %></div>
-
+<div class="message">
+	<div><span class="message_timestamp"><br />
+	    	<%= message.created_at %><br />
+	  	</span>
+		<strong><%= message.user.username %>: </strong><%= message.body %>
+		<!-- <a href="" class="message_profile-pic"></a> -->
+	</div>	
+</div>
 <!-- <div class="message">
   <a href="" class="message_profile-pic"></a><br />
   <a href="" class="message_username"><%= message.user.email %></a><br />

@@ -23,7 +23,7 @@
 			<!-- Current Individual Categories A User 'Can Save' (End)  -->
 
 			<!-- All Posted Listed (Start) -->
-			<div class="col-md-6">
+			<div class="col-md-8">
 				<div class = "postcontainer">
 					<% @blogs.each do |b| %>
 						<a href = "/blogs/<%= b.id %>">Article Post: </a><br />
@@ -77,18 +77,18 @@
 
  			<!-- Chat Feature (Start) -->
  			<div class="col-sm-3 sidenav">	
-	    			
+	    			<!-- 
  					<div class="chatheader">
  						<h2>What's On Your Mind?</h2>
  					</div>
 	    			<div class="input-box">
 	    				<div id="messages">
-							<%=render @messages %>
+							<%=  @messages %>
 						</div>
 		      		    <div class="input-box">
     						<input type="text" class="input-box_text" id="message_input"/>
   						</div>
-		 			</div>
+		 			</div> -->
 			</div>
 			
 			<!-- Chat Feature (End) -->

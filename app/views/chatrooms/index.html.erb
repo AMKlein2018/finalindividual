@@ -1,30 +1,43 @@
 <p id="notice"><%= notice %></p>
-
+<div class = 'sportheader'>
+  <h2>Sports Chatrooms: </h2>
+</div>
 <div class="fluid-container">
   <div class="row">
     <div class="col-sm-2" style="position: fixed; top 70px; left: 0;">
-      <% if user_signed_in? %>
-        <h5>Chatrooms</h5>
-        <ul>
-          <% current_user.chatrooms.each do |chatroom| %>
-            <li><%= link_to chatroom.name, chatroom %></li>
-          <% end %>
-        </ul> 
-      <% end %>
+      <div class="chatjoin">  
+        <% if user_signed_in? %>
+
+          <h4>Chatrooms Joined:</h4>
+         
+            <% current_user.chatrooms.each do |chatroom| %>
+             • <%= link_to chatroom.name, chatroom, data: {behavior: "chatroom-link", chatroom_id: chatroom.id} %><br />
+            <% end %>
+          
+        <% end %>
+      </div>
     </div>
-    <div class="col-sm-10 col-sm-offset-2" >
-      <h1>Chatrooms</h1>
-        <%= link_to 'New Chatroom', new_chatroom_path %>
-          <% @chatrooms.each do |chatroom| %>
-            <ul>
-              <li><strong><%= chatroom.name %></strong></li>
-              <%= link_to 'Show', chatroom %> •
-              <%= link_to 'Edit', edit_chatroom_path(chatroom) %> •
-              <%= link_to 'Destroy', chatroom, method: :delete, data: { confirm: 'Are you sure?' } %> •
-              <%= link_to 'Join', chatroom_chatroom_users_path(chatroom), method: :post %> •
-              <%= link_to 'Leave', chatroom_chatroom_users_path(chatroom), method: :delete %>
-            </ul>
-          <% end %>
+    <div class="col-md-10 col-sm-offset-2" >
+        <div class="newchat"><button><%= link_to 'Create New Chatroom', new_chatroom_path %></button></div>
+      <!-- <div class="indexchat"><h1>Sports Chatrooms </h1> -->
+        
+          <div class="indexchat"><% @chatrooms.each do |chatroom| %>
+              <ul>
+                <strong><%= chatroom.name %>:</strong><br />
+                <div class ="chatlinks">
+                  <%= link_to 'Enter', chatroom %> •
+                  <%= link_to 'Edit', edit_chatroom_path(chatroom) %> •
+                  <%= link_to 'Destroy', chatroom, method: :delete, data: { confirm: 'Are you sure?' } %> •
+                  <%= link_to 'Join', chatroom_chatroom_users_path(chatroom), method: :post %> •
+                  <%= link_to 'Leave', chatroom_chatroom_users_path(chatroom), method: :delete %>
+                </div><hr>
+              </ul>
+            <% end %>
+             
+          </div>
+       
+     <!--  </div> -->
+
     </div>
   </div>
 </div>
