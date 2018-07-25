@@ -1,0 +1,45 @@
+
+<div class = 'sportheader'>
+  <h2>What's On Your Mind? </h2>
+</div>
+<p id="notice"><%= notice %></p>
+<div class="fluid-container">
+  	<div class="row">
+	    <div class="col-md-2" style="position: fixed; top 70px; left: 0;">
+	    	<div class="showchatjoin"> 
+		    	<% if user_signed_in? %>
+	        		<h4>Live Chatrooms:</h4>
+
+			        	<% current_user.chatrooms.each do |chatroom| %>
+			            	• <%= link_to chatroom.name, chatroom, data: {behavior: "chatroom-link", chatroom_id: chatroom.id} %><br />
+		          	  	<% end %>
+	        		
+	      		<% end %>
+	      	</div>
+	    </div>
+
+	    <div class="col-sm-5 col-sm-offset-3">
+			<div class="chatheader">
+				  <strong>Current Chatroom:</strong>
+				  <%= @chatroom.name %><br />
+				<%= link_to 'Edit', edit_chatroom_path(@chatroom) %> •
+				<%= link_to 'Back', chatrooms_path %>
+			</div>
+			<div class="input-box">
+
+	            <div data-behavior='messages' data-chatroom-id='<%= @chatroom.id %>'>
+	              <div id="messages">
+	                <% @messages.each do |message| %>
+	                  <%= render message %>
+	                <% end %> 
+	              </div>
+	              <div class="input-box">
+	              	<%= form_for [@chatroom, Message.new], remote: true do |f| %>
+	              <!-- <input type="text" class="input-box_text" id="message_input"/> -->
+	             	<%= f.text_field :body, rows: 1, class: "input-box_text", autofocus: true, placeholder: 'Type a message' %> 
+	              <% end %> 
+	            </div>
+	        </div>	
+		</div>
+  	</div>
+</div>

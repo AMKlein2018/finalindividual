@@ -1,6 +1,9 @@
 class BlogsController < ApplicationController
   before_action :index, :show, only:[:upvote, :downvote]
   before_action :authenticate_user!
+
+  require 'news-api'
+  
   def index
   	@blogs = Blog.all.order(:cached_votes_score => :desc)
     @messages = Message.all
@@ -60,6 +63,18 @@ class BlogsController < ApplicationController
 
   def landing
     
+  end
+
+  def api
+    $newsapi = News.new("c1f1d9a225f348baab718198cab1037e")
+    @top_headlines=$newsapi.get_top_headlines(sources: "espn")
+
+    # if @top_headlines.save
+    #   redirect_to "/profile/:id"
+    # else
+    #   render "/api"
+    # end
+
   end
 
  

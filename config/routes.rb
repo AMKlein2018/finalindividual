@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
 
+  resources :chatrooms do
+    resource :chatroom_users
+    resources :messages
+  end
+
+
+  
  resources :blogs do
   resources :comments
  end
+
+  get '/api' => "blogs#api"
 
   get "/profile/:id" => "profile#show", as: 'user_profile'
   get '/landing' => "blogs#landing", as: 'blogs_landing'

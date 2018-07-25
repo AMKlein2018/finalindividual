@@ -23,7 +23,7 @@
 			<!-- Current Individual Categories A User 'Can Save' (End)  -->
 
 		<!-- Individual Category Sport Page (Start) -->
-		<div class="col-md-6">
+		<div class="col-md-8">
 			<div class="postcontainer">
 				<% @category.blogs.each_with_index do |b|%>
 					<a href = "/blogs/<%= b.id %>">Article Post:</a><br />
@@ -31,13 +31,13 @@
 					<!-- <div class ='article-list' >  -->
 					    <!-- Likes and Dislikes Functionality (Start) -->
 							<div class ="caption" style= "text-align:left;">
-								<%=link_to category_path(b), class: "like", method: :put do %>
+								<%=link_to like_blog_path(b), class: "like", method: :put do %>
 									<button type= "button" class="btn btn-info" aria-label="Left_Align">
 										<span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
 										<span class="badge"><%= b.get_upvotes.size %></span>
 									</button>
 								<% end %>
-								<%=link_to category_path(b), class: "like", method: :put do %>
+								<%=link_to dislike_blog_path(b), class: "dislike", method: :put do %>
 									<button type= "button" class="btn btn-info" aria-label="Left_Align">
 										<span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
 										<span class="badge"><%= b.get_downvotes.size %></span>
@@ -71,15 +71,15 @@
 			<!-- Chat Feature (Start) -->
 		<div class="col-sm-3 sidenav">	
     			
-				<div class="chatheader"><h2>What's On Your Mind?</h2></div>
+			<!-- 	<div class="chatheader"><h2>What's On Your Mind?</h2></div>
     			<div class="input-box">
     				<div id="messages">
-						<%=render @messages %>
+						<%= @messages %>
 					</div>
 	      		    <div class="input-box">
 						<input type="text" class="input-box_text" id="message_input"/>
 						</div>
-	 			</div>
+	 			</div> -->
 		</div>
 		
 		<!-- Chat Feature (End) -->

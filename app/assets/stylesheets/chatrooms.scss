@@ -1,0 +1,151 @@
+// Place all the styles related to the Chatrooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
+
+.chatjoin {
+
+	border: 2px solid #17256b;
+	height: 500px;
+	width: 100%;
+	margin-left: 200px;
+	margin-top: 30px;
+	text-align: center;
+	font-size: 16px;
+	border-radius: 10px;
+	overflow-y: scroll;
+	background: linear-gradient(to right, $white, $lightgrey);
+
+}
+
+.chatjoin h4 {
+
+	text-decoration: underline;
+	// text-shadow: 2px 2px $white;
+	color: $hanblue;
+
+}
+
+.showchatjoin {
+	border: 2px solid #17256b;
+	height: 500px;
+	width: 100%;
+	margin-left: 200px;
+	margin-top: 60px;
+	text-align: center;
+	font-size: 16px;
+	border-radius: 10px;
+	overflow-y: scroll;
+	background: linear-gradient(to right, $white, $lightgrey);
+
+}
+
+.showchatjoin h4 {
+
+	text-decoration: underline;
+	// text-shadow: 2px 2px $white;
+	color: $hanblue;
+
+}
+
+.indexchat {
+
+	border: 4px solid #17256b;
+	// position: relative;
+	width: 50%;
+	// bottom: 380px;
+	height: 500px;
+	margin-left: 200px;
+	// padding-right: 10px;
+	// margin-bottom: 300px;
+	overflow-y: scroll;
+	border-radius: 25px;
+	font-size: 30px;
+	// padding-left: 20px;
+	background: linear-gradient(to right, $white, $lightgrey);
+	text-align: center;
+	padding-top: 20px;
+	color: $hanblue;
+
+}
+
+.chatrooms {
+	border: 1px solid #17256b;
+	height: 450px;
+	border-radius: 10px;
+	text-align: left;
+	
+	overflow-y: scroll;
+
+}
+
+.newchat {
+
+	// border: 4px solid #17256b;
+	margin-left: 200px;
+	width: 50%;
+	border-radius: 25px;
+	// height: 50px;
+	text-align: center;
+	// padding-top: 5px;
+	font-size: 20px;
+	// margin-bottom: 20px;
+	// background: linear-gradient(to right, $white, $lightgrey);
+
+}
+
+.chatheader {
+
+	border: 4px solid $hanblue;
+	text-align: center;
+	margin-left: 80px;
+	width: 100%;
+	font-size: 18px;
+	border-radius: 5px;
+	height: 60px;
+
+
+}
+
+#messages{
+
+	padding-top: 20px;
+	text-align: center;
+	overflow-y: scroll;
+
+
+}
+
+.message {
+
+	border: 1px solid #17256b;
+	background: linear-gradient(to right, $white , $hanblue);
+	margin-right: 10px;
+	border-radius: 5px;
+	padding-bottom: 10px;
+}
+
+
+.chatlinks {
+
+		// border: 1px solid #17256b;
+		font-size: 12px;
+
+}
+
+.input-box {
+
+	// overflow-y: scroll;
+
+}
+
+.editcomment {
+
+	padding-top: 50px;
+	font-size: 20px;
+
+}
+
+
+
+
