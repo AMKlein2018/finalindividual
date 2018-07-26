@@ -180,7 +180,7 @@ label
 	overflow-y: scroll;
 	text-align: center;
 	border: 2px solid $hanblue;
-	height: 70%;
+	height: 200px;
 	width: 90%;
 	border-radius: 25px;
 	opacity: 0.9;
@@ -254,13 +254,15 @@ label
 .commentsection {
 
 	border: 1px solid #4C71D4;
-	height: 200px;
+	height: 30px;
 	background: linear-gradient(to right, $white , $hanblue);
 	// position: relative;
 	// bottom: 200px;
 	border-radius: 10px;
 	overflow-y: scroll;
-	padding-bottom: 300px;
+	padding-bottom: 270px;
+	width: 90%;
+	margin-left: 55px;
 
 
 } 
