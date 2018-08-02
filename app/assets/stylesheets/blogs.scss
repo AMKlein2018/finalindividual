@@ -180,7 +180,7 @@ label
 	overflow-y: scroll;
 	text-align: center;
 	border: 2px solid $hanblue;
-	height: 70%;
+	height: 200px;
 	width: 90%;
 	border-radius: 25px;
 	opacity: 0.9;
@@ -254,13 +254,15 @@ label
 .commentsection {
 
 	border: 1px solid #4C71D4;
-	height: 200px;
+	height: 30px;
 	background: linear-gradient(to right, $white , $hanblue);
 	// position: relative;
 	// bottom: 200px;
 	border-radius: 10px;
 	overflow-y: scroll;
-	padding-bottom: 300px;
+	padding-bottom: 270px;
+	width: 90%;
+	margin-left: 55px;
 
 
 } 
@@ -279,7 +281,7 @@ label
 
 	height: 300px;
 	width: 600px;
-	opacity: 1.0;
+	opacity: 0.8;
 	margin-left: 100px;
 	// float: right;
 
@@ -297,9 +299,34 @@ label
 }
 
 
+// carousel css
 
 
+.carousel-inner {
 
+	position: relative;
+	bottom: 100px;
+
+
+}
+
+.container {
+
+	// height: 300px;
+
+}
+
+.carouselcontent p {
+
+	font-size: 30px;
+	text-align: center;
+	border: 3px solid #4C71D4;
+	position: relative;
+	top: 200px;
+	border-radius: 10px;
+	background: linear-gradient(to right, $white , $hanblue);
+	color: $dkblue;
+}
 
 
 

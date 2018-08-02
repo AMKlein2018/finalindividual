@@ -118,8 +118,8 @@
 
 .message {
 
-	border: 1px solid #17256b;
-	background: linear-gradient(to right, $white , $hanblue);
+	border: 1px solid $hanblue;
+	background: linear-gradient(to right, $white , $lightgrey);
 	margin-right: 10px;
 	border-radius: 5px;
 	padding-bottom: 10px;

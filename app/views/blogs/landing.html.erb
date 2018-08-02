@@ -1,51 +1,62 @@
-<div class="container">
-  <!-- <h1>Marvel SuperHeros & Villains</h1> -->
-  </div>
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="3"></li>
-      <li data-target="#myCarousel" data-slide-to="4"></li>
-    </ol>
+<div class = 'sportheader'>
+  <h2>Welcome to MadJul Sports: </h2>
+</div>
+  <div class="container-fluid">
+    <div class="row content">
+      <div class="col-md-7 col-sm-offset-2">
+        <div class = "carouselcontent">
+           <p>MadJul Sports where you can create new articles, chat with friends and find live sports headline feeds from around the sporting world!
+            </p>
+        <div class="container">
+          <!-- <h1>Landing Page for MadJul Sports</h1> -->
+          </div>
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="item active">
-        <%=image_tag("/carousel/nfl.jpg", size: "1050x300", alt: "nfl")%>
-      </div>
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+              <li data-target="#myCarousel" data-slide-to="3"></li>
+              <li data-target="#myCarousel" data-slide-to="4"></li>
+            </ol>
 
-      <div class="item">
-        <%=image_tag("/carousel/nhl.jpg", size: "1050x300", alt: "nhl")%>
-      </div>
-    
-      <div class="item">
-        <%=image_tag("/carousel/golf2.jpeg", size: "1050x300", alt: "golf2")%>
-      </div>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
 
-      <div class="item">
-        <%=image_tag("/carousel/worldseries.jpg", size: "1050x300", alt: "worldseries")%>
-      </div>
+              <div class="item active">
+                <%=image_tag("Baseball/baseball1.jpg", size: "800x300", alt: "baseball")%>
+              </div>
 
-      <div class="item">
-        <%=image_tag("/carousel/nbafinals.jpg", size: "1050x300", alt: "nbafinals")%>
-      </div>
-    </div>
+              <div class="item">
+                <%=image_tag("Hockey/Hockey2.jpg", size: "800x300", alt: "hockey")%>
+              </div>
+            
+              <div class="item">
+                <%=image_tag("Golf/golf3.jpeg", size: "800x300", alt: "golf3")%>
+              </div>
+
+              <div class="item">
+                <%=image_tag("Football/football3.jpg", size: "800x300", alt: "football")%>
+              </div>
+
+              <div class="item">
+                <%=image_tag("Basketball/basketball2.jpg", size: "800x300", alt: "basketball")%>
+              </div>
+            </div>
 
 
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
 
 
 
