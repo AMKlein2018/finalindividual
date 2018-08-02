@@ -45,13 +45,6 @@ gem 'redis'
 #   gem "rails-assets-tether"
 # end
 
-group :development, :test do
-  gem 'sqlite3'
-end
-
-group :production do
-  gem 'pg', '~> 0.18'
-end
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -80,3 +73,18 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
+group :development, :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg', '~> 0.18'
+end
+
+
+
+
+
+
