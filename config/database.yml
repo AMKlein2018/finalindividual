@@ -1,19 +1,31 @@
-
-
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+#
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
 
 development:
-  adapter: postgresql
+  <<: *default
   database: finalindividual_development
-  pool: 5
-  timeout: 5000
+  username: postgres
+  password: admin
+  port: 5432
+
 test:
-  adapter: postgresql
+  <<: *default
   database: finalindividual_test
-  pool: 5
-  timeout: 5000
+  username: postgres
+  password: admin
+
 
 production:
-  adapter: postgresql
+  <<: *default
   database: finalindividual_production
-  pool: 5
-  timeout: 5000
+  username: madjul-manager
+  password: <%= ENV['MADJUL-MANAGER_DATABASE_PASSWORD'] %>
