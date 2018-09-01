@@ -22,31 +22,15 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
-
-
-# default: &default
-#   adapter: postgresql
-#   encoding: unicode
-#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-#   timeout: 5000
-
-# development:
-#   <<: *default
-#   database: finalindividual_development
-#   username: postgres
-#   password: admin
-#   port: 5432
-
-# test:
-#   <<: *default
-#   database: finalindividual_test
-#   username: postgres
-#   password: admin
-
+  database: db/production.sqlite3  
 
 # production:
-#   <<: *default
-#   database: finalindividual_production
-#   username: madjul-manager
-#   password: <%= ENV['MADJUL-MANAGER_DATABASE_PASSWORD'] %>
+#   adapter: mysql2
+#   pool: 5
+#   timeout: 5000
+#   username: "individualfinal"
+#   password: "anaBMLaMt0Oyer7G"
+#   database: "cat_list_production"
+#   socket:   "/cloudsql/individualfinal:us-east4:individualfinal"
+
+
