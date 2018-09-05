@@ -5,8 +5,13 @@ ruby '2.4.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
+
+group :production do
+  gem 'pg'
+end
+
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -30,14 +35,21 @@ gem 'devise'
 gem 'devise-bootstrap-views'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
+gem 'carrierwave', '~> 1.0'
+gem "mini_magick"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-# gem 'bootstrap', '~> 4.0'
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
+# Acts_as_Votable
+gem 'acts_as_votable', '~> 0.11.1'
+gem 'news-api', '~> 0.0.0'
+gem 'redis'
 # source "https://rails-assets.org" do
 #   gem "rails-assets-tether"
 # end
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -66,3 +78,8 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
+# gem "mysql2", "~> 0.5.2"
+
+# gem "appengine", "~> 0.4.5"
