@@ -1,0 +1,35 @@
+<div class = 'sportheader'>
+	<h2>Live Sports Headline Feed: </h2>
+</div>
+
+	<div class="container-fluid">
+		<div class="row content">
+			<div class="col-md-2 sidenav">
+		    	<div class = "favoritescontainer"></div>
+		    </div>
+			<div class="col-md-7">
+				<div class = "postcontainer">
+
+					<%@top_headlines.each do |t|%>
+					<p><strong>Title: </strong> <%=link_to t.title, t.url%></p>
+					<p><strong>Author: </strong><%=t.author %></p>
+					<div class="description"><strong>Description:<br /> </strong><%=t.description%>
+						<div class="imgsrc">
+							<img src ="<%=t.urlToImage%>">
+						</div>
+					</div><hr>
+					
+
+					<%end%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+

@@ -1,53 +1,85 @@
 <div class = "sblogheader">
-	<h1>Blog Profile:</h1>
-	<div class = "showlinks">
-	<% if current_user && current_user.id === @blog.user_id %>
-			<%= link_to "Create Blog" , new_blog_path %> |
-			<%= link_to "Edit Blog" , edit_blog_path %> |
-			<%= link_to "Delete Blog", blog_path, method: :delete %> |
-		</div><br />
-		<% end %>
-	</div>
-	<hr>
-
-	Topic: <%= @blog.title %> |
-	Sport: <%= @blog.category %>
-	<div class = "scontent"><br />Content: <br />
-		<%= @blog.content %>
-	
-		<hr>
-		<% @blog.comments do |c| %>
-			<%= c.content %>
-		<% end %>
-		
-		<br /> <%= render 'comments/form' %><br />
-	</div>
-	
+	<h2>Current Article:</h2>
 </div>
-	
-
-
-
-<!-- update comments -->
-		
-		<% if current_user && current_user.id === @blog.user_id %>
-			<% @blog.comments.each_with_index do |comment, index| %>
-
-			  	<div class = "addcomments"><%= index + 1 %>. <%= comment.content %><br /><br />
-
-				  <!-- <div class = "commentlinks"> -->
-				  
-					  	<%= link_to "Edit", edit_blog_comment_path(:blog_id => @blog.id, :id => comment.id) %> •
-					  	<%= link_to "Delete", blog_comment_path(:blog_id => @blog.id, :id => comment.id), :method => :delete %>
-				 	
-				</div><br />
-				 
-
+<div class = "showlinks">
+			<% if current_user && current_user.id === @blog.user_id %>
+				<%= link_to "Create New Post" , new_blog_path %> •
+				<%= link_to "Edit Post" , edit_blog_path %> •
+					<%= link_to "Delete Post", blog_path, method: :delete %> 
 			<% end %>
-		<% end %>
+</div><br />
 
 
-<!-- end update comments  -->
+<div class="container-fluid">
+	<div class="row content">
+		<!-- Current Article Being Viewed -->
+		<div class="col-md-8">
+			<div class= "post-container">
+				
+				<img src="<%= @blog.image.url()%>">
+				
+				<div class = "scontent"><strong><h3>Title: <%= @blog.title %></h3></strong>
+
+					<strong>Sport:</strong> <%= @blog.category.title %><br /><br />
+					<%= @blog.content %>
+				</div>
+
+			<!-- Diplay of Current Comment Starts -->
+				
+				<% if current_user && current_user.id === @blog.user_id %>
+					<% @blog.comments.each_with_index do |comment, index| %>
+				  		<div class = "addcomments">
+				  			<a href="" class="message_username"><%= current_user.email %></a><br />
+
+				  			<%= index + 1 %>. <%= comment.content %><br /><br />
+					  
+						  	<%= link_to "Edit", edit_blog_comment_path(:blog_id => @blog.id, :id => comment.id) %> •
+
+						  	<%= link_to "Delete", blog_comment_path(:blog_id => @blog.id, :id => comment.id), :method => :delete %><hr>	
+						  		 	
+						</div><br />
+					<% end %>
+				<% end %>
+			<!-- Diplay of Current Comment Ends -->
+
+			</div>
+		</div>
+
+			<!-- Created Comment Starts  -->
+			<div class="col-md-3 sidenav">
+				<div class= "createcomment">
+					<!-- update comments -->
+						<br /> <%= render 'comments/form' %><br />
+				</div>	
+
+			<!-- Created Comment Ends  -->
+			</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

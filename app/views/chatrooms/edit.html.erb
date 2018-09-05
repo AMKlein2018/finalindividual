@@ -1,0 +1,14 @@
+	
+<div class = "editcommentheader"><h2> Edit Chatrooms:</h2>
+<div class="container-fluid">
+	<div class="row content">
+		<div class="col-md-9"> 
+			<div class = "editcomment">
+
+			<%= render 'form', chatroom: @chatroom %>
+			<%= link_to 'Show', @chatroom %> |
+			<%= link_to 'Back', chatrooms_path %>
+			</div>
+		</div>
+	</div>
+</div>
