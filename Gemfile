@@ -6,12 +6,12 @@ ruby '2.4.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
 
-group :production do
-  gem 'pg'
+group :development, :test do
+  gem 'sqlite3', '~> 1.3', '>= 1.3.13'
 end
 
-group :development do
-  gem 'sqlite3'
+group :production do
+  gem 'pg'
 end
 
 
@@ -83,10 +83,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
+# gem "mysql2", "~> 0.5.2"
 
-
-
-
-
-
-
+# gem "appengine", "~> 0.4.5"
