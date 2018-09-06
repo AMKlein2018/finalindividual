@@ -134,7 +134,7 @@ GEM
     nokogiri (1.8.3)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
-    pg (0.21.0)
+    pg (1.1.2)
     popper_js (1.12.9)
     public_suffix (3.0.2)
     puma (3.11.4)
@@ -262,4 +262,4 @@ RUBY VERSION
    ruby 2.4.2p198
 
 BUNDLED WITH
-   1.16.3
+   1.16.4
