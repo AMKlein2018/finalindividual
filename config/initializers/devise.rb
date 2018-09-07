@@ -9,6 +9,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = ENV["SECRET_KEY_BASE"]
+  config.secret_key = 'f12f4ba53937b53d99eba58aa1c4a2d9f78f870930a5f6886ee35905019020e82e711cc12f46ca1e671e725bfd0a96249e5d09aaf770908ce7e8d68ac71c0621'
 
   
   # ==> Controller configuration
