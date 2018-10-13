@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   
   devise_for :users
   
-  root 'blogs#landing'
+  root 'blogs#index'
   # resources :blogs
 
   resources :categories do
