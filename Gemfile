@@ -45,6 +45,8 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'acts_as_votable', '~> 0.11.1'
 gem 'news-api', '~> 0.0.0'
 gem 'redis'
+
+gem "aws-sdk-s3", require: false
 # source "https://rails-assets.org" do
 #   gem "rails-assets-tether"
 # end
