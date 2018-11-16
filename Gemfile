@@ -38,7 +38,8 @@ gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'bootstrap', '~> 4.1.1'
+# gem 'bootstrap', '~> 4.1.1'
+gem "bootstrap", ">= 4.1.2"
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
 # Acts_as_Votable
@@ -51,6 +52,9 @@ gem "aws-sdk-s3", require: false
 #   gem "rails-assets-tether"
 # end
 
+gem "rack", ">= 2.0.6"
+gem "loofah", ">= 2.2.3"
+gem "rubyzip", ">= 1.2.2"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

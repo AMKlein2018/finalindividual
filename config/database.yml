@@ -23,7 +23,7 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3  
-
+  
 # production:
 #   adapter: mysql2
 #   pool: 5
